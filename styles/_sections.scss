@@ -33,6 +33,10 @@ section {
     margin: 0 auto;
     text-align: center;
     color: #fff;
+
+    @media screen and (max-width: $laptop-breakpoint) {
+      max-width: 525px;
+    }
   }
 
   .images {
@@ -122,6 +126,15 @@ section {
       width: calc(50% - 3em);
       border: 2px solid #fff;
       padding: 5%;
+
+      ul {
+        li {
+          &:before {
+            content: url("/assets/icon-check.svg");
+            margin-right: 15px;
+          }
+        }
+      }
 
       .btn {
         text-align: center;
@@ -234,13 +247,15 @@ section {
             bottom: 7%;
             right: 0;
             transform: translateX(50%);
+            width: 43%;
+            max-width: 325px;
           }
         }
       }
 
       &:last-of-type {
         width: 60%;
-        padding: 0 calc(10% - 4em) 0 10%;
+        padding: 0 calc(10% - 4em) 0 15%;
 
         h2 {
           margin-bottom: 1.5em;
@@ -250,16 +265,89 @@ section {
           max-width: 575px;
           margin-left: auto;
           margin-right: 12%;
+          a {
+            color: $color-red;
+          }
         }
       }
     }
   }
 }
 
-#map {
+#directions {
   height: 100vh;
+  padding: 0;
   // min-height:  ;
-  * {
-    font-family: $font-heading;
+  position: relative;
+
+  #map {
+    height: 100%;
+    * {
+      font-family: $font-heading;
+    }
+  }
+  aside {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 0 4em;
+
+    .inner {
+      padding: 4em 0;
+
+      &:last-of-type {
+        border-top: 2px solid $color-grey;
+      }
+      h6 {
+        color: $color-grey;
+      }
+      a {
+        color: $color-red;
+        margin-top: 2em;
+      }
+    }
+  }
+}
+#contact {
+  padding-top: 8em;
+  padding-bottom: 8em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  .col {
+    &:first-of-type {
+      width: 325px;
+      margin-bottom: 4em;
+      aside {
+        width: 100%;
+        border: 1px solid #d5d5d5;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        h6 {
+          margin-bottom: 2em;
+          color: $color-grey;
+        }
+        label {
+          display: flex;
+          align-items: center;
+          &:not(:first-of-type) {
+            margin-top: 1em;
+          }
+
+          input {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    &:last-of-type {
+      width: calc(95% - 325px - 4em);
+      h1 {
+        margin-bottom: 2em;
+      }
+    }
   }
 }

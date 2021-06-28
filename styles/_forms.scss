@@ -1,0 +1,43 @@
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  input {
+    width: 100%;
+    color: #000;
+    font-size: 34px;
+    border: none;
+    border-bottom: 2px solid #000;
+    margin-bottom: 3em;
+    font-weight: 300;
+    font-family: inherit;
+    padding: 10px 0;
+    &:last-of-type {
+      margin-bottom: 1em;
+    }
+    &.half-field {
+      width: 47%;
+    }
+  }
+
+  ::placeholder {
+    color: #000;
+    opacity: 1;
+    font-weight: 300;
+  }
+
+  button {
+    background: transparent;
+    color: $color-red;
+    margin-left: auto;
+    border: none;
+    outline: none;
+    font-family: inherit;
+  }
+}
+
+label {
+  font-size: 24px;
+}

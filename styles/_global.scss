@@ -29,10 +29,7 @@ h4 {
   font-weight: 300;
 }
 
-h5,
 h6 {
-  font-family: $font-body--med;
-  font-weight: 500;
 }
 
 h1 {
@@ -45,24 +42,41 @@ h1 {
 
 h2 {
   font-size: 60px;
+  @media screen and (max-width: $laptop-breakpoint) {
+    font-size: 48px;
+  }
 }
 
 h3 {
   font-size: 34px;
+  @media screen and (max-width: $laptop-breakpoint) {
+    font-size: 28px;
+  }
 }
 
 h4 {
   font-size: 24px;
+  @media screen and (max-width: $laptop-breakpoint) {
+    font-size: 22px;
+  }
 }
 
 h5 {
   font-size: 22px;
+  font-family: $font-body--light;
+  font-weight: 300;
+  @media screen and (max-width: $laptop-breakpoint) {
+    font-size: 20px;
+  }
 }
 
 h6 {
   font-size: 16px;
   text-transform: uppercase;
   color: $color-red;
+  font-weight: 400;
+  font-family: $font-body--med;
+  font-weight: 500;
 }
 
 ul {
@@ -84,6 +98,11 @@ img {
   height: auto;
 }
 
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
 .btn {
   padding: 1em 4em;
   font-size: 22px;
@@ -91,6 +110,11 @@ img {
   background: $color-red;
   font-family: $font-body--med;
   color: #fff;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
 }
 
 .has-arrow {
