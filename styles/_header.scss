@@ -1,0 +1,35 @@
+nav {
+  background: #000;
+  padding: 0.5em 4em;
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      color: #fff;
+      font-size: 18px;
+      font-family: $font-body--med;
+      &:not(:first-of-type) {
+        margin-left: 3em;
+      }
+
+      &:nth-last-child(2) {
+        margin-left: auto;
+      }
+
+      &:last-of-type {
+        a {
+          font-size: 18px;
+          border: 1px solid #fff;
+          background: transparent;
+        }
+      }
+
+      a {
+        &.logo {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
