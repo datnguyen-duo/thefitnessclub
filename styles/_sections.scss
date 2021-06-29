@@ -1,12 +1,23 @@
 section {
   padding-left: 4em;
   padding-right: 4em;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 }
 
 #banner {
   background: url("/assets/TheFitnessClub__banner.png");
+  background-size: cover;
+  background-position: 50%;
   padding-top: 10%;
   padding-bottom: 10%;
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-top: 30%;
+    padding-bottom: 30%;
+  }
 
   header {
     max-width: 70vw;
@@ -28,6 +39,11 @@ section {
   background: transparent
     linear-gradient(181deg, #000 0%, #000 20%, #fc0800 100%) 0% 0% no-repeat
     padding-box;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-top: 15%;
+    padding-bottom: 30%;
+  }
   header {
     max-width: 650px;
     margin: 0 auto;
@@ -43,6 +59,10 @@ section {
     display: flex;
     justify-content: center;
     margin: 12% 0 20%;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      margin: 12% 0 35%;
+    }
 
     .img-wrapper {
       position: relative;
@@ -72,13 +92,23 @@ section {
       max-width: 1300px;
       margin: 0 auto;
       align-items: center;
+      @media screen and (max-width: $mobile-breakpoint) {
+        text-align: center;
+      }
 
       &:first-of-type {
         margin-top: 6em;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin-top: 2em;
+        }
       }
       .col {
         flex-direction: row;
         align-items: center;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          flex-direction: column;
+        }
         img {
           width: 185px;
           height: 185px;
@@ -86,6 +116,12 @@ section {
         }
         h2 {
           margin: 0 0 0 1em;
+          @media screen and (max-width: $mobile-breakpoint) {
+            margin: 1em 0 0.5em;
+            br {
+              display: none;
+            }
+          }
         }
       }
 
@@ -103,6 +139,11 @@ section {
   padding-top: 15%;
   padding-bottom: 10em;
 
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-top: 25%;
+    padding-bottom: 5em;
+  }
+
   aside {
     position: absolute;
     right: 0;
@@ -110,28 +151,60 @@ section {
     transform: translateY(-50%);
     background: #fff;
     max-width: 35%;
+    @media screen and (max-width: $mobile-breakpoint) {
+      max-width: 50%;
+    }
   }
 
   header {
     max-width: 1300px;
     margin: 0 auto;
     color: #fff;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      h3 {
+        br {
+          display: none;
+        }
+      }
+    }
   }
 
   .row {
     max-width: 1300px;
     margin: 5em auto 0;
     justify-content: space-between;
+    @media screen and (max-width: $mobile-breakpoint) {
+      margin: 3em auto 0;
+    }
     .col {
       width: calc(50% - 3em);
       border: 2px solid #fff;
       padding: 5%;
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+        padding: 8%;
+
+        &:first-of-type {
+          margin-bottom: 3em;
+        }
+      }
 
       ul {
         li {
+          padding-left: 40px;
+          position: relative;
           &:before {
             content: url("/assets/icon-check.svg");
             margin-right: 15px;
+            position: absolute;
+            height: 15px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            left: 1px;
+            display: flex;
+            align-items: center;
           }
         }
       }
@@ -139,6 +212,9 @@ section {
       .btn {
         text-align: center;
         margin-top: 4em;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin-top: 2em;
+        }
       }
     }
   }
@@ -148,11 +224,18 @@ section {
   height: 100vh;
   position: relative;
 
+  @media screen and (max-width: $mobile-breakpoint) {
+    height: 600px;
+  }
+
   .container {
     display: flex;
     align-items: stretch;
     height: 100%;
     color: #fff;
+    @media screen and (max-width: $mobile-breakpoint) {
+      flex-direction: column;
+    }
 
     .col {
       width: 50%;
@@ -160,13 +243,31 @@ section {
       align-items: flex-start;
       justify-content: center;
 
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+        padding: 0;
+        align-items: center;
+        height: 50%;
+        text-align: center;
+      }
+
       .has-arrow {
         margin-top: 4em;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin-top: 1em;
+        }
       }
 
       &.slider {
         border-left: 2px solid #fff;
         padding: 0 calc(8% - 4em) 0 8%;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          border-left: none;
+          padding: 0;
+          border-top: 2px solid #fff;
+          padding-bottom: 4em;
+        }
 
         .slide {
           text-align: center;
@@ -201,6 +302,14 @@ section {
             width: 50%;
             z-index: -1;
             opacity: 0.3;
+
+            @media screen and (max-width: $mobile-breakpoint) {
+              font-size: 68vw;
+              right: 5%;
+              top: unset;
+              width: 100%;
+              height: 56vw;
+            }
           }
         }
 
@@ -213,9 +322,18 @@ section {
           bottom: 12%;
           width: 50%;
 
+          @media screen and (max-width: $mobile-breakpoint) {
+            bottom: 5%;
+            width: 100%;
+          }
+
           .arrow {
             cursor: pointer;
             margin: 0 2em;
+            @media screen and (max-width: $mobile-breakpoint) {
+              margin: 0 1.5em;
+              max-width: 40px;
+            }
           }
         }
       }
@@ -229,6 +347,9 @@ section {
   padding-top: 4em;
   padding-bottom: 4em;
   padding-left: 0;
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-left: 2em;
+  }
 
   .row {
     align-items: center;
@@ -236,10 +357,14 @@ section {
       &:first-of-type {
         width: 40%;
 
+        @media screen and (max-width: $mobile-breakpoint) {
+          width: 82%;
+          margin-right: auto;
+        }
+
         .img-wrapper {
           position: relative;
           > img {
-            height: 800px;
             object-fit: cover;
           }
           aside {
@@ -255,16 +380,31 @@ section {
 
       &:last-of-type {
         width: 60%;
-        padding: 0 calc(10% - 4em) 0 15%;
+        padding: 0 0 0 10%;
+        min-width: 860px;
+
+        @media screen and (max-width: $laptop-breakpoint) {
+          min-width: 750px;
+        }
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          min-width: unset;
+          width: 100%;
+          padding: 0;
+          margin-top: 2em;
+        }
 
         h2 {
-          margin-bottom: 1.5em;
+          margin-bottom: 1em;
+          @media screen and (max-width: $mobile-breakpoint) {
+            margin-bottom: 0.5em;
+          }
         }
 
         .content {
-          max-width: 575px;
+          max-width: 420px;
           margin-left: auto;
-          margin-right: 12%;
+          margin-right: auto;
           a {
             color: $color-red;
           }
@@ -280,8 +420,18 @@ section {
   // min-height:  ;
   position: relative;
 
+  @media screen and (max-width: $mobile-breakpoint) {
+    height: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
   #map {
     height: 100%;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      height: 350px;
+    }
     * {
       font-family: $font-heading;
     }
@@ -293,9 +443,20 @@ section {
     transform: translateY(-50%);
     background: #fff;
     padding: 0 4em;
-
+    @media screen and (max-width: $mobile-breakpoint) {
+      position: relative;
+      right: unset;
+      top: unset;
+      transform: unset;
+      padding: 0 2em;
+      order: -1;
+    }
     .inner {
       padding: 4em 0;
+
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: 2em 0;
+      }
 
       &:last-of-type {
         border-top: 2px solid $color-grey;
@@ -316,10 +477,19 @@ section {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    align-items: center;
+    flex-direction: column;
+  }
   .col {
     &:first-of-type {
       width: 325px;
       margin-bottom: 4em;
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+      }
       aside {
         width: 100%;
         border: 1px solid #d5d5d5;
@@ -345,8 +515,14 @@ section {
     }
     &:last-of-type {
       width: calc(95% - 325px - 4em);
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+      }
       h1 {
         margin-bottom: 2em;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin-bottom: 1em;
+        }
       }
     }
   }

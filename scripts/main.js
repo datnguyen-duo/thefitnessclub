@@ -1,3 +1,9 @@
+$(function () {
+  $(".menu-toggle").on("click", function () {
+    $("body").toggleClass("init__menu");
+  });
+});
+
 const mapStyles = [
   {
     elementType: "geometry",
@@ -239,7 +245,10 @@ function initMap() {
     },
   });
 
-  map.setCenter({ lat: 39.0525763, lng: -76.9634973 });
+  if ($(window).width() > 850) {
+    map.setCenter({ lat: 39.0525763, lng: -76.9634973 });
+  }
+
   google.maps.event.addListener(marker, "click", function () {
     window.open(
       "https://www.google.com/maps/place/Fitness+Evolution/@39.0543863,-76.9709271,17z/data=!3m1!4b1!4m5!3m4!1s0x89b7c51c836e0dd9:0xaf8d6e4e1d4f93ad!8m2!3d39.0543822!4d-76.9687384"

@@ -5,12 +5,22 @@ footer {
   .cta {
     display: flex;
     border-bottom: 2px solid #fff;
+    @media screen and (max-width: $mobile-breakpoint) {
+      flex-direction: column;
+    }
     .col {
-      padding: 10% 4em;
+      padding: 7% 4em;
       text-align: center;
       width: 50%;
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+      }
       &:last-of-type {
         border-left: 2px solid #fff;
+        @media screen and (max-width: $mobile-breakpoint) {
+          border-left: none;
+          border-top: 2px solid #fff;
+        }
       }
       h2 {
         margin-bottom: 0;
@@ -21,7 +31,13 @@ footer {
   .wrapper {
     display: flex;
     align-items: center;
-    padding: 4em;
+    padding: 4em 6em;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      padding: 4em 2em;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
 
     h6 {
       color: #868686;
@@ -31,16 +47,27 @@ footer {
       margin-right: auto;
       flex-direction: row;
       align-items: center;
-      img {
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+      }
+      a {
         width: 220px;
+        @media screen and (max-width: $mobile-breakpoint) {
+          width: 40%;
+        }
       }
       h5 {
-        margin: 0 0 0 1em;
+        margin: 0 0 0 2em;
       }
     }
 
     ul.col {
       margin-left: 3em;
+      @media screen and (max-width: $mobile-breakpoint) {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 2em;
+      }
       li {
         margin: 0.2em 0;
       }

@@ -8,6 +8,12 @@ body {
   width: 100%;
   font-family: $font-body--light;
 }
+
+body {
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-top: 71px;
+  }
+}
 h1,
 h2,
 h3,
@@ -35,38 +41,59 @@ h6 {
 h1 {
   font-size: 4.7vw;
   line-height: 1.05;
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 34px;
+  }
   #banner & {
     font-size: 6vw;
+    @media screen and (max-width: $mobile-breakpoint) {
+      font-size: 7vw;
+    }
   }
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 55px;
   @media screen and (max-width: $laptop-breakpoint) {
     font-size: 48px;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 30px;
   }
 }
 
 h3 {
-  font-size: 34px;
+  font-size: 32px;
   @media screen and (max-width: $laptop-breakpoint) {
     font-size: 28px;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 20px;
   }
 }
 
 h4 {
-  font-size: 24px;
+  font-size: 22px;
   @media screen and (max-width: $laptop-breakpoint) {
     font-size: 22px;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 18px;
   }
 }
 
 h5 {
-  font-size: 22px;
+  font-size: 20px;
   font-family: $font-body--light;
   font-weight: 300;
   @media screen and (max-width: $laptop-breakpoint) {
     font-size: 20px;
+  }
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 18px;
   }
 }
 
@@ -77,6 +104,9 @@ h6 {
   font-weight: 400;
   font-family: $font-body--med;
   font-weight: 500;
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 14px;
+  }
 }
 
 ul {
@@ -84,6 +114,9 @@ ul {
     list-style: none;
     margin: 1em 0;
     font-size: 22px;
+    @media screen and (max-width: $mobile-breakpoint) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -111,6 +144,16 @@ img {
   font-family: $font-body--med;
   color: #fff;
   cursor: pointer;
+
+  @media screen and (max-width: $laptop-breakpoint) {
+    padding: 1em 3em;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding: 1em 2em;
+    font-size: 16px;
+  }
 }
 
 button {
@@ -141,6 +184,9 @@ button {
 
 .row {
   display: flex;
+  @media screen and (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+  }
 }
 
 .col {
