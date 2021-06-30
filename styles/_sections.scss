@@ -14,6 +14,9 @@ section {
   background-position: 50%;
   padding-top: 10%;
   padding-bottom: 10%;
+  color: #fff;
+  text-align: center;
+
   @media screen and (max-width: $mobile-breakpoint) {
     padding-top: 30%;
     padding-bottom: 30%;

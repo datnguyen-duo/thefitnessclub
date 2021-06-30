@@ -4,6 +4,14 @@ nav {
   display: flex;
   align-items: center;
   z-index: 999;
+
+  body.class-schedule & {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
   @media screen and (max-width: $laptop-breakpoint) {
     padding: 0 2em;
   }
@@ -20,12 +28,17 @@ nav {
   ul {
     display: flex;
     align-items: center;
+    width: 100%;
 
     li {
       color: #fff;
       font-size: 18px;
       font-family: $font-body--med;
       margin-left: 3%;
+
+      &.active {
+        color: $color-red;
+      }
 
       @media screen and (max-width: $laptop-breakpoint) {
         font-size: 16px;
