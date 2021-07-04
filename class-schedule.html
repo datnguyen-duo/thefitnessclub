@@ -3,7 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <link rel="stylesheet" href="./calendar.css" />
+
+    <script src="./scripts/calendar.js"></script>
+    <link rel="stylesheet" href="style.css" />
+     <style type="text/css">
+      
+    body {
+      margin: 40px 10px;
+      padding: 0;
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+     #calendar {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+/*    #loading{
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }*/
+
+    /*#calendar {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+*/
+  </style>
+
     <!-- <meta
       name="keywords"
       content="web design, web development, web agency, seo, branding, marketing, illustration"
@@ -37,24 +69,19 @@
       content="https://duo-studio.co/assets/DuoStudio_Meta.jpg"
     />
      -->
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="/assets/FitnessClub_Favicon.png"
-    />
+    <link rel="shortcut icon"  type="image/png"  href="/assets/FitnessClub_Favicon.png"  />
 
-    <link rel="stylesheet" href="style.css" />
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/@barba/core"></script> -->
 
     <title>The Fitness Club | Class Schedule</title>
     <script>
@@ -65,13 +92,13 @@
       //   gtag("js", new Date());
 
       //   gtag("config", "UA-182193324-1");
-    </script>
-  </head>
+    </script>   
 
+  </head>
   <body class="class-schedule">
     <nav>
       <a href="/" class="logo"
-        ><img src="/assets/FitnessClub_Horizontal_Red_White.svg" alt="logo"
+        ><img src="./assets/FitnessClub_Horizontal_Red_White.svg" alt="logo"
       /></a>
       <ul>
         <li class="active">
@@ -99,10 +126,10 @@
       <aside class="days">
         <div class="arrows">
           <div class="arrow prev">
-            <img src="/assets/icon-arrow-left.svg" alt="arrow-left" />
+            <img src="./assets/icon-arrow-left.svg" alt="arrow-left" />
           </div>
           <div class="arrow next">
-            <img src="/assets/icon-arrow-right.svg" alt="arrow-right" />
+            <img src="./assets/icon-arrow-right.svg" alt="arrow-right" />
           </div>
         </div>
         <div class="container">
@@ -146,15 +173,18 @@
       </aside>
     </section>
 
-    <section id="calendar">
+      <div id='calendar'></div>
+    <!-- <section id="calendar"> -->
+      
+
+     <!--  <div class="col"></div>
       <div class="col"></div>
       <div class="col"></div>
       <div class="col"></div>
       <div class="col"></div>
       <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-    </section>
+      <div class="col"></div> -->
+    <!-- </section> -->
     <footer>
       <div class="cta">
         <a class="col" href="/join">
@@ -209,7 +239,66 @@
 
       <small> The Fitness Club | All Rights Reserved 2021 </small>
     </footer>
-    <script src="/scripts/main.js"></script>
-    <script src="/scripts/calendar.js"></script>
+    <script src="./scripts/main.js"></script>
+ 
+
+   <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
   </body>
 </html>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    var calendarEl = document.getElementById('calendar');
+
+     var calendar = new FullCalendar.Calendar(calendarEl, {
+       headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        bottom: 'description',
+        right: 'dayGridWeek,listYear'
+      },
+
+      businessHours: {
+        // days of week. an array of zero-based day of week integers (0=Sunday)
+        daysOfWeek: [ 1, 2, 3, 4,5,6,7], // Monday - Friday
+
+        startTime: '5:00', // a start time (10am in this example)
+        endTime: '21:00', // an end time (6pm in this example)
+      },
+
+
+      googleCalendarApiKey: 'AIzaSyD9H4Ejj9e5rAe1GN13kfmR50bDmebC91I',
+      eventSources: [
+        {
+          googleCalendarId: 'khandujasonam4@gmail.com'
+        }
+     
+      ]
+    });
+
+
+
+    calendar.render();
+  });
+
+
+
+
+   window.onload = function(){   
+    setTimeout(function(){
+     jQuery('.fc-daygrid-event-harness a').attr('href','');  
+     jQuery('.fc-daygrid-day-number').each(function() {
+          var day = $(this).html(); //get the contents of the td
+          //for any fields where the content is one character long, add a leading zero
+          if (day.length == 1)
+          {
+            $(this).html("0" + day);
+          }
+        });    
+    }, 1000);
+
+  };
+
+</script>
