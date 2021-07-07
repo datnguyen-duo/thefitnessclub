@@ -36,9 +36,26 @@ nav {
       font-family: $font-body--med;
       margin-left: 3%;
       transition: all 0.3s;
+      position: relative;
 
-      &:hover {
-        color: $color-red;
+      &::before {
+        content: "";
+        width: 0;
+        position: absolute;
+        bottom: -3px;
+        height: 1px;
+        background: $color-red;
+        transition: all 0.3s;
+      }
+
+      &:not(:last-of-type) {
+        &:hover {
+          color: $color-red;
+
+          &::before {
+            width: 100%;
+          }
+        }
       }
 
       &.active {

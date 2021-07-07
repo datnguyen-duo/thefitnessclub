@@ -54,6 +54,24 @@ $(function () {
       background: "#fc0800",
     }
   );
+
+  gsap.to(".gradient .images .img-wrapper:first-of-type img", {
+    yPercent: -40,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".gradient",
+      scrub: true,
+    },
+  });
+
+  gsap.to(".gradient .images .img-wrapper:last-of-type img", {
+    yPercent: 40,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".gradient",
+      scrub: true,
+    },
+  });
 });
 
 $(function () {

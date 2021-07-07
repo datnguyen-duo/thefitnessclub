@@ -144,6 +144,28 @@ img {
   font-family: $font-body--med;
   color: #fff;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s;
+
+  &:before {
+    content: "";
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    color: #000;
+    &::before {
+      width: 100%;
+    }
+  }
 
   @media screen and (max-width: $laptop-breakpoint) {
     padding: 1em 3em;
