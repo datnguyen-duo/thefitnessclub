@@ -113,7 +113,7 @@ $(function () {
         "A fitness program that combines Latin and international music with dance moves.",
       description:
         "A fitness program that combines Latin and international music with dance moves. Zumba routines incorporate interval training — alternating fast and slow rhythms — to help improve cardiovascular fitness.",
-      img: "/assets/bodystep.jpg",
+      img: "/assets/zumba.png",
     },
     8: {
       title: "Cycle",
@@ -121,7 +121,7 @@ $(function () {
         "Mainly an aerobic activity, which means that your heart, blood vessels and lungs all get a workout.",
       description:
         "Mainly an aerobic activity, which means that your heart, blood vessels and lungs all get a workout. You will breathe deeper, perspire and experience increased body temperature, which will improve your overall fitness level. The health benefits of regular cycling include: increased cardiovascular fitness.",
-      img: "/assets/bodystep.jpg",
+      img: "/assets/cycle.png",
     },
     9: {
       title: "Yoga",
