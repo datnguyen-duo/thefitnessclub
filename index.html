@@ -54,7 +54,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script src="https://unpkg.com/@barba/core"></script>
+    <!-- <script src="https://unpkg.com/@barba/core"></script> -->
 
     <title>The Fitness Club</title>
     <script>
@@ -87,9 +87,24 @@
     </nav>
 
     <section id="banner">
-      <header>
-        <h1>The Gym You Won't Want To Break Up With</h1>
-        <a href="/join" class="btn">Join Online</a>
+      <div class="video-wrapper">
+        <video
+          autoplay
+          playsinline
+          muted
+          loop
+          src="/assets/TheFitnessClub__banner-video.mp4"
+        ></video>
+      </div>
+
+      <header class="st">
+        <div class="text-wrapper"><h1>The Gym You</h1></div>
+        <div class="text-wrapper"><h1>Won't Want To</h1></div>
+        <div class="text-wrapper mb"><h1>Break Up With</h1></div>
+
+        <div class="text-wrapper">
+          <a href="/join" class="btn">Join Online</a>
+        </div>
       </header>
     </section>
 
@@ -118,7 +133,10 @@
       </div>
 
       <div class="features">
-        <h1>Browse Our Features</h1>
+        <div class="st">
+          <div class="text-wrapper mb"><h1>Browse Our Features</h1></div>
+        </div>
+
         <h3>
           A lot goes on at the Club. We’re sure you’ll find something you love!
         </h3>
@@ -218,13 +236,15 @@
     <section id="signature">
       <aside>
         <img
-          src="/assets/TheFitnessClub__signature-membership-image.svg"
+          src="/assets/TheFitnessClub__signature-membership-image.png"
           alt=""
         />
       </aside>
 
-      <header>
-        <h1>Signature<br />Memberships</h1>
+      <header class="st">
+        <div class="text-wrapper"><h1>Signature</h1></div>
+        <div class="text-wrapper mb"><h1>Memberships</h1></div>
+
         <h3>
           We love keeping things simple for you.<br />
           Choose a membership plan that works for you below.
@@ -267,6 +287,8 @@
     <section id="features">
       <div class="container">
         <div class="col">
+          <div class="screen"></div>
+
           <h1>See What's<br />Featured.</h1>
           <h3>
             Looking to try something new? Take your fitness to whole other
@@ -279,27 +301,23 @@
         <div class="col slider">
           <div class="slide">
             <div class="img-wrapper bg-image">
-              <img
-                src="/assets/TheFitnessClub__banner.png"
-                alt="background-image"
-              />
+              <img src="/assets/bodypump.jpg" alt="background-image" />
             </div>
             <h1 class="bg-num">1</h1>
             <div class="content">
-              <h2>YOGA</h2>
+              <h2>LES MILLS BODYPUMP</h2>
               <h3>
-                Yoga also helps stimulated the circulatory system, and keep
-                muscles and joints strong and flexible. This class promotes
-                balance, flexibility, and stress reduction.
+                The original barbell class, the ideal workout for anyone looking
+                to get lean, toned and fit – fast.
               </h3>
             </div>
           </div>
 
           <div class="arrows">
-            <div class="arrow">
+            <div class="arrow prev">
               <img src="/assets/icon-arrow-left.svg" alt="icon-arrow" />
             </div>
-            <div class="arrow">
+            <div class="arrow next">
               <img src="/assets/icon-arrow-right.svg" alt="icon-arrow" />
             </div>
           </div>
@@ -397,10 +415,11 @@
         </aside>
       </div>
       <div class="col">
-        <h1>
-          We'd love to<br />
-          hear from you.
-        </h1>
+        <header class="st">
+          <div class="text-wrapper"><h1>We'd love to</h1></div>
+          <div class="text-wrapper"><h1>hear from you.</h1></div>
+        </header>
+
         <form action="/">
           <input type="text" class="hidden" />
           <input type="text" class="half-field" placeholder="First name" />

@@ -3,7 +3,11 @@ form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 6em;
 
+  @media screen and (max-width: $mobile-breakpoint) {
+    margin-top: 2em;
+  }
   input {
     width: 100%;
     color: #000;
@@ -22,6 +26,12 @@ form {
     }
     &.half-field {
       width: 47%;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      border-bottom-color: $color-red;
     }
   }
 

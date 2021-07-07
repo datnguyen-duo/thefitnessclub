@@ -35,6 +35,11 @@ nav {
       font-size: 18px;
       font-family: $font-body--med;
       margin-left: 3%;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $color-red;
+      }
 
       &.active {
         color: $color-red;
@@ -94,7 +99,7 @@ nav {
         text-align: center;
 
         &:not(:last-of-type) {
-          border-top: 2px solid #fff;
+          border-top: 1px solid #fff;
         }
 
         a {

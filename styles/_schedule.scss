@@ -15,7 +15,7 @@
     left: 0;
     bottom: 0;
     padding: 1em 0;
-    border-top: 2px solid #fff;
+    border-top: 1px solid #fff;
     .arrows {
       position: absolute;
       display: flex;
@@ -61,7 +61,7 @@
     width: calc(100% / 7);
     height: 100%;
     &:not(:first-of-type) {
-      border-left: 2px solid $color-grey;
+      border-left: 1px solid $color-grey;
     }
   }
 }

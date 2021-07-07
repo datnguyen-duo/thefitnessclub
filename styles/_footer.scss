@@ -4,7 +4,7 @@ footer {
 
   .cta {
     display: flex;
-    border-bottom: 2px solid #fff;
+    border-bottom: 1px solid #fff;
     @media screen and (max-width: $mobile-breakpoint) {
       flex-direction: column;
     }
@@ -16,14 +16,22 @@ footer {
         width: 100%;
       }
       &:last-of-type {
-        border-left: 2px solid #fff;
+        border-left: 1px solid #fff;
         @media screen and (max-width: $mobile-breakpoint) {
           border-left: none;
-          border-top: 2px solid #fff;
+          border-top: 1px solid #fff;
         }
       }
       h2 {
         margin-bottom: 0;
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        h2 {
+          transform: skew(-20deg);
+          color: $color-red;
+        }
       }
     }
   }
