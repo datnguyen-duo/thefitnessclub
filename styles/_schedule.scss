@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: teal;
   }
 
   .days {
@@ -62,6 +63,122 @@
     height: 100%;
     &:not(:first-of-type) {
       border-left: 1px solid $color-grey;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  max-width: 800px;
+  width: 0;
+  top: 0;
+  background: #000;
+  z-index: 9999;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 4em;
+
+    a {
+      display: flex;
+      align-items: center;
+      &:before {
+        content: url("assets/icon-plus.svg");
+        display: flex;
+        margin-right: 10px;
+      }
+    }
+
+    .close {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      &:after {
+        content: url("assets/icon-plus.svg");
+        display: flex;
+        margin-left: 10px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .container {
+    max-width: 585px;
+    margin: 0 auto;
+    .img-wrapper {
+      margin-bottom: 2em;
+    }
+
+    .anim-wrap {
+      overflow: hidden;
+      margin-bottom: 2em;
+      h2 {
+        margin: 0;
+      }
+    }
+
+    .row {
+      margin-bottom: 4em;
+      .col {
+        margin-right: 3em;
+      }
+    }
+
+    .description {
+      font-size: 22px;
+    }
+  }
+  .pagination {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2em 2.5em;
+
+    .prev,
+    .next {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .prev {
+      &::before {
+        content: url("assets/icon-arrow.svg");
+        display: flex;
+        margin-right: 10px;
+        transform: rotate(180deg);
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        &::before {
+          transform: rotate(180deg) translateX(5px);
+        }
+      }
+    }
+    .next {
+      &::after {
+        content: url("assets/icon-arrow.svg");
+        display: flex;
+        margin-left: 10px;
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        &::after {
+          transform: translateX(5px);
+        }
+      }
     }
   }
 }

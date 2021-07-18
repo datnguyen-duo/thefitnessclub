@@ -199,3 +199,14 @@ $(function () {
     tl.set(screen, { clearProps: "all" });
   });
 });
+
+$(function () {
+  gsap.to("#personal-trainers .row .col:first-of-type .img-wrapper aside img", {
+    yPercent: -40,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#personal-trainers",
+      scrub: true,
+    },
+  });
+});
