@@ -263,7 +263,9 @@
               <li>TRX and stretch room</li>
             </ul>
 
-            <a href="/join" class="btn">Join Today</a>
+            <a href="https://www.v2klive.com/php/ocSA.php?mp=a" class="btn"
+              >Join Today</a
+            >
           </div>
 
           <div class="col">
@@ -278,7 +280,9 @@
               <li>TRX and stretch room</li>
             </ul>
 
-            <a href="/join" class="btn">Join Today</a>
+            <a href="https://www.v2klive.com/php/ocSA.php?mp=b" class="btn"
+              >Join Today</a
+            >
           </div>
         </div>
       </header>
@@ -389,25 +393,26 @@
       <div class="col">
         <aside>
           <h6>I would like to <br />Inquire About:</h6>
-          <label for="personal-training"
+          <label for="personal-training" value="Personal Training"
             ><input
               type="radio"
               name="inquiry"
-              id="personal-training" />Personal Training <span></span
+              id="personal-training"
+              checked />Personal Training <span></span
           ></label>
-          <label for="free-day-pass"
+          <label for="free-day-pass" value="Free Day Pass"
             ><input type="radio" name="inquiry" id="free-day-pass" />Free Day
             Pass <span></span
           ></label>
-          <label for="guest-pass"
+          <label for="guest-pass" value="Guest Pass"
             ><input type="radio" name="inquiry" id="guest-pass" />Guest Pass
             <span></span
           ></label>
-          <label for="membership"
+          <label for="membership" value="Membership"
             ><input type="radio" name="inquiry" id="membership" />Membership
             <span></span
           ></label>
-          <label for="general-questions"
+          <label for="general-questions" value="General Questions"
             ><input type="radio" name="inquiry" id="general-questions" />General
             Questions <span></span
           ></label>
@@ -419,15 +424,50 @@
           <div class="text-wrapper"><h1>hear from you.</h1></div>
         </header>
 
-        <form action="/">
-          <input type="text" class="hidden" />
-          <input type="text" class="half-field" placeholder="First name" />
-          <input type="text" class="half-field" placeholder="Last name" />
-          <input type="text" class="half-field" placeholder="Email address" />
+        <form
+          action="#"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify
+        >
+          <input
+            type="text"
+            class="hidden"
+            name="subject"
+            value="Personal Training"
+            id="subject"
+          />
+          <input
+            type="text"
+            class="half-field"
+            placeholder="First name"
+            name="first-name"
+            required
+          />
+          <input
+            type="text"
+            class="half-field"
+            placeholder="Last name"
+            name="last-name"
+            required
+          />
+          <input
+            type="text"
+            class="half-field"
+            placeholder="Email address"
+            required
+          />
           <input type="text" class="half-field" placeholder="Phone number" />
           <input type="text" placeholder="What can we help you with?" />
-
-          <button class="has-arrow red">Submit</button>
+          <div class="btn-wrapper">
+            <div class="anim-wrap">
+              <h5 class="note">
+                Thanks for contacting us, we will get back to you soon!
+              </h5>
+            </div>
+            <button class="has-arrow red">Submit</button>
+          </div>
         </form>
       </div>
     </section>

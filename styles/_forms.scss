@@ -41,6 +41,20 @@ form {
     font-weight: 300;
   }
 
+  .btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    .anim-wrap {
+      overflow: hidden;
+      .note {
+        transform: translateY(100%);
+        margin: 0;
+      }
+    }
+  }
+
   button {
     background: transparent;
     color: $color-red;

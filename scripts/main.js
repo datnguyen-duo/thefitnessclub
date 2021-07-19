@@ -210,3 +210,24 @@ $(function () {
     },
   });
 });
+
+$(function () {
+  let radio = $("#contact .col:first-of-type label");
+  var val = $("#contact .col:first-of-type input:checked");
+
+  radio.on("click", function () {
+    val = $(this).attr("value");
+    $("#contact .col #subject").attr("value", val);
+
+    console.log($("#contact .col #subject").attr("value"));
+  });
+
+  $("form").submit(function (e) {
+    e.preventDefault();
+    var $form = $(this);
+
+    $.post($form.attr("action"), $form.serialize()).then(function () {
+      gsap.to("form .note", { y: 0 });
+    });
+  });
+});
