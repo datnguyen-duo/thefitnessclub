@@ -226,6 +226,7 @@ $(function () {
     var $form = $(this);
 
     $.post($form.attr("action"), $form.serialize()).then(function () {
+      $form.trigger("reset");
       gsap.to("form .note", { y: 0 });
     });
   });
