@@ -214,12 +214,11 @@ $(function () {
 $(function () {
   let radio = $("#contact .col:first-of-type label");
   var val = $("#contact .col:first-of-type input:checked");
+  $("#contact .col #subject").attr("value", val);
 
   radio.on("click", function () {
     val = $(this).attr("value");
     $("#contact .col #subject").attr("value", val);
-
-    console.log($("#contact .col #subject").attr("value"));
   });
 
   $("form").submit(function (e) {
