@@ -1,13 +1,31 @@
 $(function () {
-  function openModal() {
+  $("#calendar a").on("click", function (e) {
+    e.preventDefault();
+  });
+
+  function openModal(
+    className,
+    link,
+    classImage,
+    date,
+    time,
+    instructor,
+    description
+  ) {
     var tl = gsap.timeline();
     let modal = $(".modal");
-    let img = modal.find(".img-wrapper");
+    let img = modal.find(".img-wrapper img");
     let heading = modal.find(".class-name");
     let details = modal.find("header, .row, .description, .pagination");
 
     tl.add(function () {
-      //
+      heading.text(className);
+      $(".modal header a").attr("src", link);
+      img.attr("src", classImage);
+      $(".modal .date").text(date);
+      $(".modal .time").text(time);
+      $(".modal .instructor").text(instructor);
+      $(".modal .description").text(description);
     });
     tl.to(modal, { width: "100%", ease: "Expo.easeIn" });
     tl.from(img, { opacity: 0 });
@@ -29,14 +47,51 @@ $(function () {
     tl.set(".modal *", { clearProps: "all" });
   }
 
-  $("body").on("click", function () {
-    if ($(this).hasClass("modal-open")) {
-      closeModal();
-      $(this).removeClass("modal-open");
-    } else {
-      openModal();
-      $(this).addClass("modal-open");
+  $(".note").on("click", function () {
+    var className = $(this).find(".eventTitle").text();
+    var lowerCaseClassName = className.toLowerCase();
+
+    // var link = className.attr("eventid");
+
+    if (lowerCaseClassName.indexOf("bodypump") >= 0) {
+      var i = 1;
+    } else if (lowerCaseClassName.indexOf("bodyflow") >= 0) {
+      var i = 2;
+    } else if (lowerCaseClassName.indexOf("core") >= 0) {
+      var i = 3;
+    } else if (lowerCaseClassName.indexOf("rpm") >= 0) {
+      var i = 4;
+    } else if (lowerCaseClassName.indexOf("bodystep") >= 0) {
+      var i = 5;
+    } else if (lowerCaseClassName.indexOf("bodyattack") >= 0) {
+      var i = 6;
+    } else if (lowerCaseClassName.indexOf("zumba") >= 0) {
+      var i = 7;
+    } else if (lowerCaseClassName.indexOf("cycle") >= 0) {
+      var i = 8;
+    } else if (lowerCaseClassName.indexOf("yoga") >= 0) {
+      var i = 9;
     }
+
+    var classImage = classes[i]["img"];
+    var date = "July 16 2021";
+    var time = $(this).find(".oclock").text();
+    var instructor = $(this).find(".name").text();
+    var description = classes[i]["description"];
+
+    // var className = "test1";
+    var link = "test2";
+    // var classImage = "test3";
+    // var date = "test4";
+    // var time = "test5";
+    // var instructor = "test6";
+    // var description = "test7";
+
+    openModal(className, link, classImage, date, time, instructor, description);
+  });
+
+  $(".modal .close ").on("click", function () {
+    closeModal();
   });
 });
 
@@ -193,7 +248,7 @@ $(function () {
 //   console.log(emailAddress);
 
 //   jQuery.post(
-//     "add_event_to_guess_calendar.php",
+//     "add_event_to_guest_calendar.php",
 //     {
 //       event_id: eventIDClicked,
 //       email_address: emailAddress,
