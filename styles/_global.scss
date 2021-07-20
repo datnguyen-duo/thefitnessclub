@@ -13,6 +13,10 @@ body {
   @media screen and (max-width: $mobile-breakpoint) {
     padding-top: 71px;
   }
+
+  &.init__modal {
+    overflow: hidden;
+  }
 }
 h1,
 h2,

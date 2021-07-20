@@ -1,8 +1,4 @@
 $(function () {
-  $("#calendar a").on("click", function (e) {
-    e.preventDefault();
-  });
-
   function openModal(
     className,
     link,
@@ -12,7 +8,11 @@ $(function () {
     instructor,
     description
   ) {
-    var tl = gsap.timeline();
+    var tl = gsap.timeline({
+      onStart: function () {
+        $("body").addClass("init__modal");
+      },
+    });
     let modal = $(".modal");
     let img = modal.find(".img-wrapper img");
     let heading = modal.find(".class-name");
@@ -34,7 +34,11 @@ $(function () {
   }
 
   function closeModal() {
-    var tl = gsap.timeline();
+    var tl = gsap.timeline({
+      onComplete: function () {
+        $("body").removeClass("init__modal");
+      },
+    });
     let modal = $(".modal");
     let img = modal.find(".img-wrapper");
     let heading = modal.find(".class-name");
@@ -92,6 +96,15 @@ $(function () {
 
   $(".modal .close ").on("click", function () {
     closeModal();
+  });
+
+  $("body").on("click", function (e) {
+    if ($(this).hasClass("init__modal")) {
+      var target = e.target;
+      if (!target.closest(".modal")) {
+        closeModal();
+      }
+    }
   });
 });
 
