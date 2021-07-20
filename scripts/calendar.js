@@ -78,7 +78,7 @@ $(function () {
     }
 
     var classImage = classes[i]["img"];
-    var date = "July 16 2021";
+    var date = "Monday, July 16";
     var time = $(this).find(".oclock").text();
     var instructor = $(this).find(".name").text();
     var description = classes[i]["description"];
