@@ -160,7 +160,7 @@ $(function () {
     var tl = gsap.timeline();
 
     if (x < 2) {
-      x = 9;
+      x = 3;
     } else {
       x--;
     }
@@ -180,7 +180,7 @@ $(function () {
   next.on("click", function () {
     var tl = gsap.timeline();
 
-    if (x > 8) {
+    if (x > 2) {
       x = 1;
     } else {
       ++x;
