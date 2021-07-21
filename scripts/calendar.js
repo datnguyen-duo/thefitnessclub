@@ -36,7 +36,7 @@ $(function () {
   function closeModal() {
     var tl = gsap.timeline({
       onComplete: function () {
-        $("body").removeClass("init__modal");
+        $("body").removeClass("init__modal init__add-to-calendar");
       },
     });
     let modal = $(".modal");
@@ -106,6 +106,11 @@ $(function () {
       }
     }
   });
+
+  $(".modal header a").on("click", function (e) {
+    e.preventDefault();
+    $("body").addClass("init__add-to-calendar");
+  });
 });
 
 // var weekOffset = 0;
@@ -141,14 +146,12 @@ $(function () {
 // }
 
 // function renderNextWeek() {
-//   console.log("next");
 //   if (lastWeek) return false;
 //   weekOffset += 1;
 //   renderWeek();
 //   firstWeek = false;
 // }
 // function renderPrevWeek() {
-//   console.log("prev");
 //   if (firstWeek) return false;
 //   weekOffset -= 1;
 //   renderWeek();
@@ -158,11 +161,9 @@ $(function () {
 // function renderWeek() {
 //   var msunday = new Date();
 //   msunday.setDate(today.getDate() - today.getDay() + 7 * weekOffset);
-//   console.log(msunday);
 
 //   var cday = new Date();
 //   cday.setDate(today.getDate() - today.getDay() + 7 * weekOffset);
-//   console.log(cday);
 //   cMonth = cday.toLocaleString("default", { month: "long" });
 //   cMonth = cMonth.substring(0, 3);
 
@@ -200,7 +201,6 @@ $(function () {
 //       msunday.getFullYear(),
 //     function (data, status) {
 //       eventsList = JSON.parse(data);
-//       console.log(eventsList);
 //       if (eventsList) {
 //         for (j = 0; j < eventsList.length; j++) {
 //           e = eventsList[j];
@@ -257,8 +257,6 @@ $(function () {
 
 // jQuery("#btnSubmitEmail").click(function (e) {
 //   var emailAddress = jQuery("#inp-email-calendar").val();
-
-//   console.log(emailAddress);
 
 //   jQuery.post(
 //     "add_event_to_guest_calendar.php",

@@ -95,14 +95,26 @@
           No need to reserve a class. Bring your water and get your sweat on!
         </h3>
       </header>
+    </section>
 
+    <section id="calendar">
       <aside class="days">
         <div class="arrows">
           <div class="arrow prev">
             <img src="/assets/icon-arrow-left.svg" alt="arrow-left" />
+            <img
+              class="mobile-arrow"
+              src="/assets/icon-arrow-black.svg"
+              alt="arrow-left"
+            />
           </div>
           <div class="arrow next">
             <img src="/assets/icon-arrow-right.svg" alt="arrow-right" />
+            <img
+              class="mobile-arrow"
+              src="/assets/icon-arrow-black.svg"
+              alt="arrow-left"
+            />
           </div>
         </div>
         <div class="container">
@@ -144,29 +156,29 @@
           </div>
         </div>
       </aside>
-    </section>
 
-    <section id="calendar">
-      <div class="col">
-        <div class="note note-0">
-          <h2>
-            <a class="eventTitle" data-eventid="7if6oke7vmsjicekkhhk45mcca"
-              >Yoga</a
-            >
-          </h2>
-          <div>
-            <span class="name">Casandra</span><br /><span class="oclock"
-              >1:30 AM-2:30 AM</span
-            >
+      <div class="col-wrapper">
+        <div class="col">
+          <div class="note note-0">
+            <h3>
+              <a class="eventTitle" data-eventid="7if6oke7vmsjicekkhhk45mcca"
+                >Yoga</a
+              >
+            </h3>
+            <div>
+              <span class="name">Casandra</span><br /><span class="oclock"
+                >1:30 AM-2:30 AM</span
+              >
+            </div>
           </div>
         </div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
       </div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
     </section>
     <footer>
       <div class="cta">
@@ -226,6 +238,17 @@
       <header>
         <a href="#">Add to Calendar</a>
         <p class="close">Close</p>
+        <form action="/">
+          <input
+            id="inp-email-calendar"
+            type="email"
+            placeholder="Email address"
+            required
+          />
+          <button id="btnSubmitEmail">
+            <img src="/assets/icon-arrow-right.svg" alt="icon-arrow" />
+          </button>
+        </form>
       </header>
       <div class="container">
         <div class="img-wrapper">
