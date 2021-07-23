@@ -197,6 +197,7 @@ function renderWeek() {
       eventsList = JSON.parse(data);
 
       if (eventsList) {
+        console.log(eventsList);
         for (j = 0; j < eventsList.length; j++) {
           e = eventsList[j];
           if (e.start) {
@@ -238,9 +239,8 @@ function renderWeek() {
             jQuery(
               ".dayofweek:nth-child(" +
                 (eventDayOfWeek + 1) +
-                ") > .note:nth-child(" +
-                (node - 1) +
-                ")"
+                ") > .note-" +
+                node
             ).html(str);
           }
         }

@@ -46,7 +46,7 @@ $optParams = array(
   'orderBy' => 'startTime',
   'singleEvents' => true,
   'timeMin' => date(DATE_ATOM, mktime(0, 0, 0, $m, $d, $y)),
-  'timeMax' => date(DATE_ATOM, mktime(0, 0, 0, $m, $d+6, $y)),  
+  'timeMax' => date(DATE_ATOM, mktime(0, 0, 0, $m, $d+7, $y)),  
 );
 $results = $service->events->listEvents($calendarId, $optParams);
 $events = $results->getItems();

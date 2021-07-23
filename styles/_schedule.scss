@@ -159,11 +159,11 @@
         cursor: pointer;
         padding: 10%;
 
-        &.note-0,
-        &.note-1,
-        &.note-2 {
-          display: none;
-        }
+        // &.note-0,
+        // &.note-1,
+        // &.note-2 {
+        //   display: none;
+        // }
         @media screen and (max-width: $mobile-breakpoint) {
           width: 115px;
           margin: 0.5em;
