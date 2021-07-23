@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 require __DIR__ . '/vendor/autoload.php';
 
 $client = new Google_Client();
@@ -23,11 +24,18 @@ $service = new Google_Service_Calendar($client);
 // Print the next 10 events on the user's calendar.
 $calendarId = 'primary';
 
-$d=strtotime($dateString);
+//$d=strtotime($dateString);
 //echo "Created date is " . date("Y-m-d h:i:sa", $d);
-$d = intval($_GET['date']);
-$m = intval($_GET['month']);
-$y = intval($_GET['year']);
+
+$d=1;
+$m=1;
+$y=2000;
+if(isset($_GET['date']) && isset($_GET['month']) && isset($_GET['year'])){
+    $d = intval($_GET['date']);
+    $m = intval($_GET['month']);
+    $y = intval($_GET['year']);
+}
+
 
 // echo $d."-";
 // echo $m."-";

@@ -251,7 +251,7 @@ section {
           padding-left: 40px;
           position: relative;
           &:before {
-            content: url("/assets/icon-check.svg");
+            content: url("assets/icon-check.svg");
             margin-right: 15px;
             position: absolute;
             height: 15px;
@@ -379,7 +379,7 @@ section {
               position: absolute;
               height: 100%;
               width: 100%;
-              background: url("/assets/bg-overlay.svg");
+              background: url("assets/bg-overlay.svg");
               opacity: 0.8;
             }
             img {

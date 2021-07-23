@@ -198,7 +198,7 @@ button {
     }
   }
   &:after {
-    content: url("/assets/icon-arrow.svg");
+    content: url("assets/icon-arrow.svg");
     margin-left: 10px;
     transition: all 0.3s;
     display: inline-block;
@@ -206,7 +206,7 @@ button {
 
   &.red {
     &::after {
-      content: url("/assets/icon-arrow-red.svg");
+      content: url("assets/icon-arrow-red.svg");
     }
   }
 }

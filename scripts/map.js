@@ -226,7 +226,7 @@ function initMap() {
     map: map,
     icon: {
       labelOrigin: new google.maps.Point(11, 50),
-      url: "/assets/map-pin.svg",
+      url: "assets/map-pin.svg",
       size: new google.maps.Size(40, 40),
       origin: new google.maps.Point(0, 0),
       anchor: new google.maps.Point(11, 40),
