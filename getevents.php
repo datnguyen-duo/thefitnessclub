@@ -27,6 +27,7 @@ $calendarId = 'primary';
 //$d=strtotime($dateString);
 //echo "Created date is " . date("Y-m-d h:i:sa", $d);
 
+date_default_timezone_set('US/Eastern');
 $d=1;
 $m=1;
 $y=2000;

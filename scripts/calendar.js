@@ -195,9 +195,7 @@ function renderWeek() {
       msunday.getFullYear(),
     function (data, status) {
       eventsList = JSON.parse(data);
-
       if (eventsList) {
-        console.log(eventsList);
         for (j = 0; j < eventsList.length; j++) {
           e = eventsList[j];
           if (e.start) {
