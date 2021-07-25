@@ -221,13 +221,54 @@ $(function () {
     $("#contact .col #subject").attr("value", val);
   });
 
-  $("form").submit(function (e) {
-    e.preventDefault();
+  $("#contactForm").on("submit", function (event) {
+    event.preventDefault();
     var $form = $(this);
+    var origin = window.location.origin;
+    var url = origin + "/mail.php";
+    var subject = "";
+    var fname = "";
+    var lname = "";
+    var email = "";
+    var message = "";
 
-    $.post($form.attr("action"), $form.serialize()).then(function () {
-      $form.trigger("reset");
-      gsap.to("form .note", { y: 0 });
+    subject = $form.find('input[name="subject"]').attr("value");
+    fname = $form.find('input[name="first-name"]').val();
+    lname = $form.find('input[name="last-name"]').val();
+    phone = $form.find('input[name="phone-number"]').val();
+    message = $form.find('input[name="message"]').val();
+    email = $form.find('input[name="email-address"]').val();
+
+    $.ajax({
+      url: url,
+      data: {
+        subject: subject,
+        fname: fname,
+        lname: lname,
+        email: email,
+        phone: phone,
+        message: message,
+      },
+      type: "POST",
+      error: function (xhr, ajaxOptions, thrownError) {
+        console.log(xhr.responseText);
+      },
+      success: function (data) {
+        $("#contactForm").trigger("reset");
+        gsap.to("form .note", { y: 0 });
+      },
     });
   });
+
+  // $("form").submit(function (e) {
+  //   e.preventDefault();
+  //   var $form = $(this);
+
+  //   $.post($form.attr("action"), $form.serialize()).then(function () {
+  //     $form.trigger("reset");
+  //     gsap.to("form .note", { y: 0 });
+  //   });
+  // });
 });
+
+$(function () {});

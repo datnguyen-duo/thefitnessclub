@@ -141,10 +141,12 @@
     .col {
       width: calc(100% / 7);
       height: 100%;
+      padding: 2em 0;
       @media screen and (max-width: $mobile-breakpoint) {
         width: 100%;
         height: calc(100% / 7);
         flex-direction: row;
+        padding: 0;
       }
 
       &:not(:first-of-type) {
@@ -156,18 +158,39 @@
       }
 
       .note {
-        cursor: pointer;
-        padding: 10%;
+        padding: 0 10%;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &.has-event {
+          cursor: pointer;
+        }
 
         &.note-0,
         &.note-1,
-        &.note-2 {
+        &.note-2,
+        &.note-3,
+        &.note-4,
+        &.note-21,
+        &.note-22,
+        &.note-23 {
           display: none;
         }
+
         @media screen and (max-width: $mobile-breakpoint) {
           width: 115px;
           margin: 0.5em;
           padding: 0;
+        }
+
+        h3 {
+          margin: 0 0 0.2em;
+        }
+
+        h5 {
+          margin: 0;
         }
       }
     }

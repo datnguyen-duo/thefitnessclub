@@ -1,7 +1,9 @@
+var eventID;
+
 $(function () {
   function openModal(
     className,
-    link,
+    eventID,
     classImage,
     date,
     time,
@@ -20,7 +22,7 @@ $(function () {
 
     tl.add(function () {
       heading.text(className);
-      $(".modal header a").attr("src", link);
+      $(".modal #addToCalEmail").attr("data-attribute-eventid", eventID);
       img.attr("src", classImage);
       $(".modal .date").text(date);
       $(".modal .time").text(time);
@@ -37,6 +39,7 @@ $(function () {
     var tl = gsap.timeline({
       onComplete: function () {
         $("body").removeClass("init__modal init__add-to-calendar");
+        $("#addToCalEmail").attr("placeholder", "Email Address");
       },
     });
     let modal = $(".modal");
@@ -52,10 +55,11 @@ $(function () {
   }
 
   $(".note").on("click", function () {
+    if (!$(this).is(".has-event")) return;
+
     var className = $(this).find(".eventTitle").text();
     var lowerCaseClassName = className.toLowerCase();
-
-    // var link = className.attr("eventid");
+    eventID = $(this).find(".eventTitle").attr("data-eventid");
 
     if (lowerCaseClassName.indexOf("bodypump") >= 0) {
       var i = 1;
@@ -78,20 +82,20 @@ $(function () {
     }
 
     var classImage = classes[i]["img"];
-    var date = "Monday, July 16";
+    var date = $(this).find(".date").text();
     var time = $(this).find(".oclock").text();
     var instructor = $(this).find(".name").text();
     var description = classes[i]["description"];
 
-    // var className = "test1";
-    var link = "test2";
-    // var classImage = "test3";
-    // var date = "test4";
-    // var time = "test5";
-    // var instructor = "test6";
-    // var description = "test7";
-
-    openModal(className, link, classImage, date, time, instructor, description);
+    openModal(
+      className,
+      eventID,
+      classImage,
+      date,
+      time,
+      instructor,
+      description
+    );
   });
 
   $(".modal .close ").on("click", function () {
@@ -134,12 +138,12 @@ function initCalendar() {
 
   renderWeek();
 
-  jQuery(".btnNextWeek").click(function (e) {
+  $(".btnNextWeek").click(function (e) {
     e.stopPropagation();
     renderNextWeek();
   });
 
-  jQuery(".btnPrevWeek").click(function (e) {
+  $(".btnPrevWeek").click(function (e) {
     e.stopPropagation();
     renderPrevWeek();
   });
@@ -170,7 +174,7 @@ function renderWeek() {
   mfriday = new Date();
   mfriday.setDate(msunday.getDate() + 6);
 
-  jQuery(".note").empty();
+  $(".note").empty();
 
   for (i = 0; i <= 6; i++) {
     cMonth = cday.toLocaleString("default", { month: "long" });
@@ -178,10 +182,8 @@ function renderWeek() {
     cdate = cday.getDate();
     if (isLastDay(cday)) lastWeek = true;
     if (isFirstDay(cday)) firstWeek = true;
-    jQuery(".weekday" + i + " .num").empty();
-    jQuery(".weekday" + i + " .num").html(
-      String(cday.getDate()).padStart(2, "0")
-    );
+    $(".weekday" + i + " .num").empty();
+    $(".weekday" + i + " .num").html(String(cday.getDate()).padStart(2, "0"));
 
     cday.setDate(cday.getDate() + 1);
   }
@@ -203,6 +205,20 @@ function renderWeek() {
 
             var startTimestamp = Date.parse(e.start);
             var mDate = new Date(startTimestamp);
+            var eventDateFormat = new Date(mDate);
+
+            var options = {
+              weekday: "long",
+              // year: "numeric",
+              month: "long",
+              day: "numeric",
+            };
+
+            var formattedDate = eventDateFormat.toLocaleDateString(
+              "en-US",
+              options
+            );
+
             var node = parseInt(mDate.getHours());
 
             var endTimestamp = Date.parse(e.end);
@@ -216,30 +232,36 @@ function renderWeek() {
               '">' +
               e.title +
               "</h3>";
-            str += "<div>" + '<span class="name">' + e.description + "</span>";
-            str += "<br>";
+            str += '<h5 class="name">' + e.description + "</h5>";
             str +=
-              '<span class="oclock">' +
+              '<h5 class="oclock">' +
               mDate.toLocaleString("en-US", {
                 hour: "numeric",
                 minute: "numeric",
                 hour12: true,
               }) +
-              "-" +
+              " - " +
               mDate2.toLocaleString("en-US", {
                 hour: "numeric",
                 minute: "numeric",
                 hour12: true,
               }) +
-              "</span>";
-            str += "</div>";
+              "</h5>";
+            str += '<h5 class="date hidden">' + formattedDate + "</h5>";
 
-            jQuery(
+            $(
               ".dayofweek:nth-child(" +
                 (eventDayOfWeek + 1) +
                 ") > .note-" +
                 node
             ).html(str);
+
+            $(
+              ".dayofweek:nth-child(" +
+                (eventDayOfWeek + 1) +
+                ") > .note-" +
+                node
+            ).addClass("has-event");
           }
         }
       }
@@ -248,24 +270,19 @@ function renderWeek() {
 }
 initCalendar();
 
-jQuery("#btnSubmitEmail").click(function (e) {
-  var emailAddress = jQuery("#inp-email-calendar").val();
+$("#addToCalSubmit").click(function (e) {
+  var emailAddress = $("#addToCalEmail").val();
+  $("#addToCalEmail").attr("placeholder", "Adding event...");
 
-  jQuery.post(
+  $.post(
     "add_event_to_guest_calendar.php",
     {
-      event_id: eventIDClicked,
+      event_id: eventID,
       email_address: emailAddress,
     },
     function (data, status) {
       eventIDClicked = null;
-      jQuery("#modal-success").show();
-      jQuery("#modal-main-content").hide();
-      setTimeout(function () {
-        jQuery("#modal-success").hide();
-        modal.style.display = "none";
-        jQuery("#modal-main-content").show();
-      }, 1500);
+      $("#addToCalEmail").attr("placeholder", "Event added successfully!");
     }
   );
 });
