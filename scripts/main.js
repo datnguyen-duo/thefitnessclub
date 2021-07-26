@@ -1,6 +1,12 @@
 gsap.registerPlugin(ScrollTrigger);
 
 $(function () {
+  if (window.location.href.indexOf("#join") != -1) {
+    document.querySelector("#signatureMemberships").scrollIntoView();
+  }
+});
+
+$(function () {
   $(".menu-toggle").on("click", function () {
     $("body").toggleClass("init__menu");
   });
@@ -212,8 +218,13 @@ $(function () {
 });
 
 $(function () {
+  if ($("body").is(".class-schedule")) {
+    return;
+  }
   let radio = $("#contact .col:first-of-type label");
-  var val = $("#contact .col:first-of-type input:checked");
+  var val = $(
+    "#contact .col:first-of-type input:checked"
+  )[0].parentElement.getAttribute("value");
   $("#contact .col #subject").attr("value", val);
 
   radio.on("click", function () {
@@ -259,16 +270,4 @@ $(function () {
       },
     });
   });
-
-  // $("form").submit(function (e) {
-  //   e.preventDefault();
-  //   var $form = $(this);
-
-  //   $.post($form.attr("action"), $form.serialize()).then(function () {
-  //     $form.trigger("reset");
-  //     gsap.to("form .note", { y: 0 });
-  //   });
-  // });
 });
-
-$(function () {});

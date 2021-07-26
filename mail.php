@@ -24,33 +24,33 @@
 
                 $message .= '<tr style="background-color: #ffffff;">
         
-                                <td style="width: 20%; padding: 10px 20px;"><strong>Name :</strong></td>
+                                <td style="width: 10%; padding: 10px 20px;"><strong>Name:</strong></td>
         
-                                <td style="width: 80%; padding: 10px 20px; text-align: left;">'.$_POST['fname'] . " " . $_POST['lname'].'</td>
+                                <td style="width: 90%; padding: 10px 20px; text-align: left;">'.$_POST['fname'] . " " . $_POST['lname'].'</td>
         
                             </tr>
         
                             <tr style="background-color: #ffffff;">
         
-                                <td style="width: 20%; padding: 10px 20px;"><strong>Email: </strong></td>
+                                <td style="width: 10%; padding: 10px 20px;"><strong>Email: </strong></td>
         
-                                <td style="width: 80%; padding: 10px 20px; text-align: left;">'.$_POST['email'].'</td>
+                                <td style="width: 90%; padding: 10px 20px; text-align: left;">'.$_POST['email'].'</td>
         
                             </tr>
 
                             <tr style="background-color: #ffffff;">
         
-                                <td style="width: 20%; padding: 10px 20px;"><strong>Phone: </strong></td>
+                                <td style="width: 10%; padding: 10px 20px;"><strong>Phone: </strong></td>
         
-                                <td style="width: 80%; padding: 10px 20px; text-align: left;">'.$_POST['phone'].'</td>
+                                <td style="width: 90%; padding: 10px 20px; text-align: left;">'.$_POST['phone'].'</td>
     
                             </tr>
         
                             <tr style="background-color: #ffffff;">
         
-                                <td style="width: 20%; padding: 10px 20px;"><strong>Message: </strong></td>
+                                <td style="width: 10%; padding: 10px 20px;"><strong>Message: </strong></td>
         
-                                <td style="width: 80%; padding: 10px 20px; text-align: left;">'.$_POST['message'].'</td>
+                                <td style="width: 90%; padding: 10px 20px; text-align: left;">'.$_POST['message'].'</td>
         
                             </tr>';
 
@@ -60,7 +60,7 @@
 
                     <tr>
 
-                        <td style="padding: 20px; background: #231F20;" colspan="2">
+                        <td style="padding: 5px; background: #000000;" colspan="2">
 
                             <p style="text-align: center; color: #fff; font-size: 14px; margin: 10px 0;">
 

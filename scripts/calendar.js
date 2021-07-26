@@ -1,122 +1,5 @@
 var eventID;
 
-$(function () {
-  function openModal(
-    className,
-    eventID,
-    classImage,
-    date,
-    time,
-    instructor,
-    description
-  ) {
-    var tl = gsap.timeline({
-      onStart: function () {
-        $("body").addClass("init__modal");
-      },
-    });
-    let modal = $(".modal");
-    let img = modal.find(".img-wrapper img");
-    let heading = modal.find(".class-name");
-    let details = modal.find("header, .row, .description, .pagination");
-
-    tl.add(function () {
-      heading.text(className);
-      $(".modal #addToCalEmail").attr("data-attribute-eventid", eventID);
-      img.attr("src", classImage);
-      $(".modal .date").text(date);
-      $(".modal .time").text(time);
-      $(".modal .instructor").text(instructor);
-      $(".modal .description").text(description);
-    });
-    tl.to(modal, { width: "100%", ease: "Expo.easeIn" });
-    tl.from(img, { opacity: 0 });
-    tl.from(heading, { opacity: 0, yPercent: 100 }, "-=.2");
-    tl.from(details, { opacity: 0 }, "-=.2");
-  }
-
-  function closeModal() {
-    var tl = gsap.timeline({
-      onComplete: function () {
-        $("body").removeClass("init__modal init__add-to-calendar");
-        $("#addToCalEmail").attr("placeholder", "Email Address");
-      },
-    });
-    let modal = $(".modal");
-    let img = modal.find(".img-wrapper");
-    let heading = modal.find(".class-name");
-    let details = modal.find("header, .row, .description, .pagination");
-
-    gsap.to(img, { opacity: 0 });
-    gsap.to(heading, { opacity: 0 });
-    tl.to(details, { opacity: 0 });
-    tl.to(modal, { width: 0, ease: "Expo.easeOut" });
-    tl.set(".modal *", { clearProps: "all" });
-  }
-
-  $(".note").on("click", function () {
-    if (!$(this).is(".has-event")) return;
-
-    var className = $(this).find(".eventTitle").text();
-    var lowerCaseClassName = className.toLowerCase();
-    eventID = $(this).find(".eventTitle").attr("data-eventid");
-
-    if (lowerCaseClassName.indexOf("bodypump") >= 0) {
-      var i = 1;
-    } else if (lowerCaseClassName.indexOf("bodyflow") >= 0) {
-      var i = 2;
-    } else if (lowerCaseClassName.indexOf("core") >= 0) {
-      var i = 3;
-    } else if (lowerCaseClassName.indexOf("rpm") >= 0) {
-      var i = 4;
-    } else if (lowerCaseClassName.indexOf("bodystep") >= 0) {
-      var i = 5;
-    } else if (lowerCaseClassName.indexOf("bodyattack") >= 0) {
-      var i = 6;
-    } else if (lowerCaseClassName.indexOf("zumba") >= 0) {
-      var i = 7;
-    } else if (lowerCaseClassName.indexOf("cycle") >= 0) {
-      var i = 8;
-    } else if (lowerCaseClassName.indexOf("yoga") >= 0) {
-      var i = 9;
-    }
-
-    var classImage = classes[i]["img"];
-    var date = $(this).find(".date").text();
-    var time = $(this).find(".oclock").text();
-    var instructor = $(this).find(".name").text();
-    var description = classes[i]["description"];
-
-    openModal(
-      className,
-      eventID,
-      classImage,
-      date,
-      time,
-      instructor,
-      description
-    );
-  });
-
-  $(".modal .close ").on("click", function () {
-    closeModal();
-  });
-
-  $("body").on("click", function (e) {
-    if ($(this).hasClass("init__modal")) {
-      var target = e.target;
-      if (!target.closest(".modal")) {
-        closeModal();
-      }
-    }
-  });
-
-  $(".modal header a").on("click", function (e) {
-    e.preventDefault();
-    $("body").addClass("init__add-to-calendar");
-  });
-});
-
 var weekOffset = 0;
 var today = new Date();
 //var msunday;//start of current week
@@ -175,6 +58,7 @@ function renderWeek() {
   mfriday.setDate(msunday.getDate() + 6);
 
   $(".note").empty();
+  $(".note").removeClass("has-event");
 
   for (i = 0; i <= 6; i++) {
     cMonth = cday.toLocaleString("default", { month: "long" });
@@ -285,4 +169,285 @@ $("#addToCalSubmit").click(function (e) {
       $("#addToCalEmail").attr("placeholder", "Event added successfully!");
     }
   );
+});
+
+$(function () {
+  function openModal(
+    className,
+    eventID,
+    classImage,
+    date,
+    time,
+    instructor,
+    description
+  ) {
+    var tl = gsap.timeline({
+      onStart: function () {
+        $("body").addClass("init__modal");
+      },
+    });
+    let modal = $(".modal");
+    let img = modal.find(".img-wrapper img");
+    let heading = modal.find(".class-name");
+    let details = modal.find("header, .row, .description, .pagination");
+
+    tl.add(function () {
+      heading.text(className);
+      $(".modal #addToCalEmail").attr("data-attribute-eventid", eventID);
+      img.attr("src", classImage);
+      $(".modal .date").text(date);
+      $(".modal .time").text(time);
+      $(".modal .instructor").text(instructor);
+      $(".modal .description").text(description);
+    });
+    tl.to(modal, { width: "100%", ease: "Expo.easeIn" });
+    tl.from(img, { opacity: 0 });
+    tl.from(heading, { opacity: 0, yPercent: 100 }, "-=.2");
+    tl.from(details, { opacity: 0 }, "-=.2");
+  }
+
+  function closeModal() {
+    var tl = gsap.timeline({
+      onComplete: function () {
+        $("body").removeClass("init__modal init__add-to-calendar");
+        $("#addToCalEmail").attr("placeholder", "Email Address");
+        $(".note").removeClass("active");
+      },
+    });
+    let modal = $(".modal");
+    let img = modal.find(".img-wrapper");
+    let heading = modal.find(".class-name");
+    let details = modal.find("header, .row, .description, .pagination");
+
+    gsap.to(img, { opacity: 0 });
+    gsap.to(heading, { opacity: 0 });
+    tl.to(details, { opacity: 0 });
+    tl.to(modal, { width: 0, ease: "Expo.easeOut" });
+    tl.set(".modal *", { clearProps: "all" });
+  }
+
+  function paginateModal(
+    className,
+    eventID,
+    classImage,
+    date,
+    time,
+    instructor,
+    description
+  ) {
+    var tl = gsap.timeline();
+
+    let modal = $(".modal");
+    let img = modal.find(".img-wrapper img");
+    let heading = modal.find(".class-name");
+    let modalContainer = modal.find(".container");
+
+    tl.to(modalContainer, { opacity: 0 });
+    tl.add(function () {
+      heading.text(className);
+      $(".modal #addToCalEmail").attr("data-attribute-eventid", eventID);
+      img.attr("src", classImage);
+      $(".modal .date").text(date);
+      $(".modal .time").text(time);
+      $(".modal .instructor").text(instructor);
+      $(".modal .description").text(description);
+    });
+    tl.to(modalContainer, { opacity: 1 });
+  }
+
+  $(".note").on("click", function () {
+    if (!$(this).is(".has-event")) return;
+
+    $(this).addClass("active");
+    var className = $(this).find(".eventTitle").text();
+    var lowerCaseClassName = className.toLowerCase();
+    eventID = $(this).find(".eventTitle").attr("data-eventid");
+
+    if (lowerCaseClassName.indexOf("bodypump") >= 0) {
+      var i = 1;
+    } else if (lowerCaseClassName.indexOf("bodyflow") >= 0) {
+      var i = 2;
+    } else if (lowerCaseClassName.indexOf("core") >= 0) {
+      var i = 3;
+    } else if (lowerCaseClassName.indexOf("rpm") >= 0) {
+      var i = 4;
+    } else if (lowerCaseClassName.indexOf("bodystep") >= 0) {
+      var i = 5;
+    } else if (lowerCaseClassName.indexOf("bodyattack") >= 0) {
+      var i = 6;
+    } else if (lowerCaseClassName.indexOf("zumba") >= 0) {
+      var i = 7;
+    } else if (lowerCaseClassName.indexOf("cycle") >= 0) {
+      var i = 8;
+    } else if (lowerCaseClassName.indexOf("yoga") >= 0) {
+      var i = 9;
+    }
+
+    var classImage = classes[i]["img"];
+    var date = $(this).find(".date").text();
+    var time = $(this).find(".oclock").text();
+    var instructor = $(this).find(".name").text();
+    var description = classes[i]["description"];
+
+    if ($("body").is(".init__modal")) {
+      $(".note").removeClass("active");
+      paginateModal(
+        className,
+        eventID,
+        classImage,
+        date,
+        time,
+        instructor,
+        description
+      );
+      return false;
+    }
+
+    openModal(
+      className,
+      eventID,
+      classImage,
+      date,
+      time,
+      instructor,
+      description
+    );
+  });
+
+  $(".modal .close").on("click", function () {
+    closeModal();
+  });
+
+  $("body").on("click", function (e) {
+    if ($(this).hasClass("init__modal")) {
+      var target = e.target;
+      if (!target.closest(".modal")) {
+        closeModal();
+      }
+    }
+  });
+
+  $(".modal header a").on("click", function (e) {
+    e.preventDefault();
+    $("body").addClass("init__add-to-calendar");
+  });
+
+  var nextClassBtn = $(".modal .pagination .next");
+  var prevClassBtn = $(".modal .pagination .prev");
+
+  nextClassBtn.on("click", function () {
+    var activeClass = $(".note.active");
+    var parentIndex = $(".note.active").parent().index();
+
+    if (activeClass.nextAll(".has-event").length > 0) {
+      var nextClass = activeClass.nextAll(".has-event").first();
+    } else {
+      if (parentIndex < 6) {
+        var nextClass = activeClass.parent().next().find(".has-event").first();
+      } else {
+        return;
+      }
+    }
+
+    $(".note").removeClass("active");
+    nextClass.addClass("active");
+
+    var className = nextClass.find(".eventTitle").text();
+
+    var lowerCaseClassName = className.toLowerCase();
+    eventID = nextClass.find(".eventTitle").attr("data-eventid");
+    if (lowerCaseClassName.indexOf("bodypump") >= 0) {
+      var i = 1;
+    } else if (lowerCaseClassName.indexOf("bodyflow") >= 0) {
+      var i = 2;
+    } else if (lowerCaseClassName.indexOf("core") >= 0) {
+      var i = 3;
+    } else if (lowerCaseClassName.indexOf("rpm") >= 0) {
+      var i = 4;
+    } else if (lowerCaseClassName.indexOf("bodystep") >= 0) {
+      var i = 5;
+    } else if (lowerCaseClassName.indexOf("bodyattack") >= 0) {
+      var i = 6;
+    } else if (lowerCaseClassName.indexOf("zumba") >= 0) {
+      var i = 7;
+    } else if (lowerCaseClassName.indexOf("cycle") >= 0) {
+      var i = 8;
+    } else if (lowerCaseClassName.indexOf("yoga") >= 0) {
+      var i = 9;
+    }
+
+    var classImage = classes[i]["img"];
+    var date = nextClass.find(".date").text();
+    var time = nextClass.find(".oclock").text();
+    var instructor = nextClass.find(".name").text();
+    var description = classes[i]["description"];
+
+    paginateModal(
+      className,
+      eventID,
+      classImage,
+      date,
+      time,
+      instructor,
+      description
+    );
+  });
+
+  prevClassBtn.on("click", function () {
+    var activeClass = $(".note.active");
+    var parentIndex = $(".note.active").parent().index();
+
+    if (activeClass.prevAll(".has-event").length > 0) {
+      var prevClass = activeClass.prevAll(".has-event").first();
+    } else {
+      if (parentIndex > 0) {
+        var prevClass = activeClass.parent().prev().find(".has-event").first();
+      } else {
+        return;
+      }
+    }
+
+    $(".note").removeClass("active");
+    prevClass.addClass("active");
+
+    var className = prevClass.find(".eventTitle").text();
+
+    var lowerCaseClassName = className.toLowerCase();
+    eventID = prevClass.find(".eventTitle").attr("data-eventid");
+    if (lowerCaseClassName.indexOf("bodypump") >= 0) {
+      var i = 1;
+    } else if (lowerCaseClassName.indexOf("bodyflow") >= 0) {
+      var i = 2;
+    } else if (lowerCaseClassName.indexOf("core") >= 0) {
+      var i = 3;
+    } else if (lowerCaseClassName.indexOf("rpm") >= 0) {
+      var i = 4;
+    } else if (lowerCaseClassName.indexOf("bodystep") >= 0) {
+      var i = 5;
+    } else if (lowerCaseClassName.indexOf("bodyattack") >= 0) {
+      var i = 6;
+    } else if (lowerCaseClassName.indexOf("zumba") >= 0) {
+      var i = 7;
+    } else if (lowerCaseClassName.indexOf("cycle") >= 0) {
+      var i = 8;
+    } else if (lowerCaseClassName.indexOf("yoga") >= 0) {
+      var i = 9;
+    }
+
+    var classImage = classes[i]["img"];
+    var date = prevClass.find(".date").text();
+    var time = prevClass.find(".oclock").text();
+    var instructor = prevClass.find(".name").text();
+    var description = classes[i]["description"];
+
+    paginateModal(
+      className,
+      eventID,
+      classImage,
+      date,
+      time,
+      instructor,
+      description
+    );
+  });
 });
