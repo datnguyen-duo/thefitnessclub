@@ -54,18 +54,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <!-- <script src="https://unpkg.com/@barba/core"></script> -->
 
     <title>The Fitness Club</title>
-    <script>
-      //   window.dataLayer = window.dataLayer || [];
-      //   function gtag() {
-      //     dataLayer.push(arguments);
-      //   }
-      //   gtag("js", new Date());
-
-      //   gtag("config", "UA-182193324-1");
-    </script>
   </head>
 
   <body>
@@ -77,7 +67,7 @@
         <li><a href="/class-schedule.html">Class Schedule</a></li>
         <li><a href="/visit-us.html">Visit Us</a></li>
         <li><a href="tel:+13016800505">Call Us: (301) 680-0505</a></li>
-        <li><a class="btn" href="#signatureMemberships">Join Online</a></li>
+        <li><a class="btn" href="#pricing">Join Online</a></li>
       </ul>
       <div class="menu-toggle">
         <div class="line"></div>
@@ -103,7 +93,7 @@
         <div class="text-wrapper mb"><h1>Break Up With</h1></div>
 
         <div class="text-wrapper">
-          <a href="/join" class="btn">Join Online</a>
+          <a href="#pricing" class="btn">Join Online</a>
         </div>
       </header>
     </section>
@@ -250,7 +240,7 @@
           Choose a membership plan that works for you below.
         </h3>
 
-        <div class="row">
+        <div class="row" id="pricing">
           <div class="col">
             <h6>Signature 12</h6>
             <h2>$29.99</h2>
@@ -302,7 +292,9 @@
             levels!
           </h3>
 
-          <a href="/schedule" class="has-arrow">View Class Schedule</a>
+          <a href="/class-schedule.html" class="has-arrow"
+            >View Class Schedule</a
+          >
         </div>
 
         <div class="col slider">
@@ -313,10 +305,10 @@
             <h1 class="bg-num">1</h1>
             <div class="content">
               <h2>LES MILLS BODYPUMP</h2>
-              <h3>
+              <h4>
                 The original barbell class, the ideal workout for anyone looking
                 to get lean, toned and fit – fast.
-              </h3>
+              </h4>
             </div>
           </div>
 
@@ -478,11 +470,11 @@
 
     <footer>
       <div class="cta">
-        <a class="col" href="#signatureMemberships">
+        <a class="col" href="#pricing">
           <h6>Get a Membership</h6>
           <h2>Join Online</h2>
         </a>
-        <a class="col" href="/schedule">
+        <a class="col" href="/class-schedule.html">
           <h6>Our Classes</h6>
           <h2>View Schedule</h2>
         </a>
@@ -503,7 +495,7 @@
 
         <ul class="col">
           <h6>Contact Us</h6>
-          <li><a href="tel+13016800505">(301) 680-0505</a></li>
+          <li><a href="tel:+13016800505">(301) 680-0505</a></li>
           <li>
             <a href="mailto:jaime@thefitnessclub.net"
               >jaime@thefitnessclub.net</a

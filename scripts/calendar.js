@@ -132,6 +132,7 @@ function renderWeek() {
               }) +
               "</h5>";
             str += '<h5 class="date hidden">' + formattedDate + "</h5>";
+            str += '<h5 class="learn-more">Learn More</h5>';
 
             $(
               ".dayofweek:nth-child(" +
@@ -155,6 +156,7 @@ function renderWeek() {
 initCalendar();
 
 $("#addToCalSubmit").click(function (e) {
+  e.preventDefault();
   var emailAddress = $("#addToCalEmail").val();
   $("#addToCalEmail").attr("placeholder", "Adding event...");
 

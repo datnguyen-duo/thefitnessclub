@@ -344,7 +344,7 @@
     </section>
     <footer>
       <div class="cta">
-        <a class="col" href="/#join">
+        <a class="col" href="/#pricing">
           <h6>Get a Membership</h6>
           <h2>Join Online</h2>
         </a>
@@ -396,47 +396,49 @@
 
       <small> The Fitness Club | All Rights Reserved 2021 </small>
     </footer>
-    <div class="modal">
-      <header>
-        <a href="#">Add to Calendar</a>
-        <p class="close">Close</p>
-        <form action="/">
-          <input
-            id="addToCalEmail"
-            type="email"
-            placeholder="Email address"
-            data-attribute-eventid=""
-            required
-          />
-          <button id="addToCalSubmit">
-            <img src="assets/icon-arrow-right.svg" alt="icon-arrow" />
-          </button>
-        </form>
-      </header>
-      <div class="container">
-        <div class="img-wrapper">
-          <img src="assets/TheFitnessClub__banner.png" alt="class-image" />
+    <div class="modal-container">
+      <div class="modal">
+        <header>
+          <a href="#">Add to Calendar</a>
+          <p class="close">Close</p>
+          <form action="/">
+            <input
+              id="addToCalEmail"
+              type="email"
+              placeholder="Email address"
+              data-attribute-eventid=""
+              required
+            />
+            <button id="addToCalSubmit">
+              <img src="assets/icon-arrow-right.svg" alt="icon-arrow" />
+            </button>
+          </form>
+        </header>
+        <div class="container">
+          <div class="img-wrapper">
+            <img src="" alt="class-image" />
+          </div>
+          <div class="anim-wrap"><h2 class="class-name"></h2></div>
+          <div class="row">
+            <div class="col">
+              <h6>DATE</h6>
+              <p class="date"></p>
+            </div>
+            <div class="col">
+              <h6>TIME</h6>
+              <p class="time"></p>
+            </div>
+            <div class="col">
+              <h6>INSTRUCTOR</h6>
+              <p class="instructor"></p>
+            </div>
+          </div>
+          <h4 class="description"></h4>
         </div>
-        <div class="anim-wrap"><h2 class="class-name"></h2></div>
-        <div class="row">
-          <div class="col">
-            <h6>DATE</h6>
-            <p class="date"></p>
-          </div>
-          <div class="col">
-            <h6>TIME</h6>
-            <p class="time"></p>
-          </div>
-          <div class="col">
-            <h6>INSTRUCTOR</h6>
-            <p class="instructor"></p>
-          </div>
+        <div class="pagination">
+          <p class="prev">Previous Class</p>
+          <p class="next">Next Class</p>
         </div>
-        <p class="description"></p>
-      </div>
-      <div class="pagination">
-        <p class="prev">Previous Class</p>
-        <p class="next">Next Class</p>
       </div>
     </div>
     <script src="scripts/main.js"></script>

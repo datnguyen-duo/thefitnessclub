@@ -1,8 +1,8 @@
 gsap.registerPlugin(ScrollTrigger);
 
 $(function () {
-  if (window.location.href.indexOf("#join") != -1) {
-    document.querySelector("#signatureMemberships").scrollIntoView();
+  if (window.location.href.indexOf("#pricing") != -1) {
+    document.querySelector("#pricing").scrollIntoView();
   }
 });
 
@@ -62,7 +62,7 @@ $(function () {
   );
 
   gsap.to(".gradient .images .img-wrapper:first-of-type img", {
-    yPercent: -40,
+    yPercent: -60,
     ease: "none",
     scrollTrigger: {
       trigger: ".gradient",
@@ -71,11 +71,40 @@ $(function () {
   });
 
   gsap.to(".gradient .images .img-wrapper:last-of-type img", {
-    yPercent: 40,
+    yPercent: 60,
     ease: "none",
     scrollTrigger: {
       trigger: ".gradient",
       scrub: true,
+    },
+  });
+});
+
+$(function () {
+  let rows = $(".gradient .features .row");
+
+  rows.each(function () {
+    let trigger = $(this);
+
+    gsap.from(trigger, {
+      opacity: 0,
+      y: 40,
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 80%",
+      },
+    });
+  });
+});
+
+$(function () {
+  gsap.to("#signature aside img", {
+    yPercent: 60,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#signature",
+      scrub: true,
+      start: "top 150%",
     },
   });
 });
@@ -176,7 +205,7 @@ $(function () {
       $(".slider .bg-image img").attr("src", classes[x]["img"]);
       $(".slider .bg-num").text(x);
       $(".slider .content h2").text(classes[x]["title"]);
-      $(".slider .content h3").text(classes[x]["blurb"]);
+      $(".slider .content h4").text(classes[x]["blurb"]);
     });
     tl.set(screen, { right: "unset", left: 0 });
     tl.to(screen, 0.5, { width: "0", ease: "Expo.easeOut" });
@@ -195,10 +224,9 @@ $(function () {
     tl.to(screen, 0.5, { width: "100%", ease: "Expo.easeIn" });
     tl.add(function () {
       $(".slider .bg-image img").attr("src", classes[x]["img"]);
-
       $(".slider .bg-num").text(x);
       $(".slider .content h2").text(classes[x]["title"]);
-      $(".slider .content h3").text(classes[x]["blurb"]);
+      $(".slider .content h4").text(classes[x]["blurb"]);
     });
     tl.set(screen, { right: "unset", left: 0 });
     tl.to(screen, 0.5, { width: "0", ease: "Expo.easeOut" });
@@ -208,7 +236,7 @@ $(function () {
 
 $(function () {
   gsap.to("#personal-trainers .row .col:first-of-type .img-wrapper aside img", {
-    yPercent: -40,
+    yPercent: -60,
     ease: "none",
     scrollTrigger: {
       trigger: "#personal-trainers",
