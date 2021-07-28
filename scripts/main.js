@@ -4,6 +4,10 @@ $(function () {
   if (window.location.href.indexOf("#pricing") != -1) {
     document.querySelector("#pricing").scrollIntoView();
   }
+
+  if (window.location.href.indexOf("#directions") != -1) {
+    document.querySelector("#directions").scrollIntoView();
+  }
 });
 
 $(function () {
@@ -180,7 +184,15 @@ const classes = {
     blurb: 'An effective and exciting "Mind" and "Body" workout.',
     description:
       'An effective and exciting "Mind" and "Body" workout. It combines aerobic and anaerobic movements, as well as elements from Hatha Yoga and traditional exercise, linked together in a flowing series of poses that create strength, flexibility, endurance and balance.',
-    img: "assets/yoga.webp",
+    img: "assets/yoga.jpeg",
+  },
+  10: {
+    title: "Insanity",
+    blurb:
+      "The Insanity workout is an advanced exercise program. It involves bodyweight exercises and high-intensity interval training. Insanity workouts are performed 20 to 60 minutes at a time.",
+    description:
+      "The Insanity workout is an advanced exercise program. It involves bodyweight exercises and high-intensity interval training. Insanity workouts are performed 20 to 60 minutes at a time.",
+    img: "assets/insanity.jpeg",
   },
 };
 

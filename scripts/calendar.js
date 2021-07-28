@@ -283,6 +283,8 @@ $(function () {
       var i = 8;
     } else if (lowerCaseClassName.indexOf("yoga") >= 0) {
       var i = 9;
+    } else if (lowerCaseClassName.indexOf("insanity") >= 0) {
+      var i = 10;
     }
 
     var classImage = classes[i]["img"];
@@ -376,6 +378,8 @@ $(function () {
       var i = 8;
     } else if (lowerCaseClassName.indexOf("yoga") >= 0) {
       var i = 9;
+    } else if (lowerCaseClassName.indexOf("insanity") >= 0) {
+      var i = 10;
     }
 
     var classImage = classes[i]["img"];
@@ -434,6 +438,8 @@ $(function () {
       var i = 8;
     } else if (lowerCaseClassName.indexOf("yoga") >= 0) {
       var i = 9;
+    } else if (lowerCaseClassName.indexOf("insanity") >= 0) {
+      var i = 10;
     }
 
     var classImage = classes[i]["img"];
