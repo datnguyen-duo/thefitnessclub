@@ -184,8 +184,7 @@
         &.note-3,
         &.note-4,
         &.note-21,
-        &.note-22,
-        &.note-23 {
+        &.note-22 {
           display: none;
         }
 
@@ -248,6 +247,7 @@
   transition: all 0.2s;
   body.init__modal & {
     opacity: 1;
+    pointer-events: initial;
   }
   .modal {
     height: 100vh;

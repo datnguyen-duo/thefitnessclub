@@ -2,6 +2,13 @@
 
     $to = "dat@duo-studio.co";
 
+    $to = "jaime@thefitnessclub.net";
+
+    $to = "rachel@thefitnessclub.net";
+
+    $to = "contact@thefitnessclub.net";
+
+
     $message = '<table style="background: #ffffff; margin: 0 auto;" width="100%" cellspacing="0" cellpadding="0">
 
                 <thead>
