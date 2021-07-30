@@ -214,6 +214,7 @@
           align-items: center;
           color: $color-red;
           margin-top: 0.5em;
+          margin-bottom: 1em;
           transition: all 0.5s;
           &:after {
             content: url("assets/icon-arrow-red.svg");

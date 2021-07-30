@@ -21,8 +21,15 @@ if (file_exists($tokenPath)) {
 
 $service = new Google_Service_Calendar($client);
 
+$calendarList  = $service->calendarList->listCalendarList();
+
+//echo "<pre>";
+//print_r($calendarList);
+//echo "</pre>";
+//die();
+
 // Print the next 10 events on the user's calendar.
-$calendarId = 'primary';
+$calendarId = '958sgekk51i709nlqvgsqa9ihs@group.calendar.google.com';
 
 //$d=strtotime($dateString);
 //echo "Created date is " . date("Y-m-d h:i:sa", $d);
@@ -37,11 +44,6 @@ if(isset($_GET['date']) && isset($_GET['month']) && isset($_GET['year'])){
     $y = intval($_GET['year']);
 }
 
-
-// echo $d."-";
-// echo $m."-";
-// echo $y;
-// die();
 $optParams = array(
   'maxResults' => 2500 ,
   'orderBy' => 'startTime',

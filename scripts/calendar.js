@@ -110,13 +110,16 @@ function renderWeek() {
 
             var eventDayOfWeek = mDate.getDay();
 
+            var eventTitle = e.title.replace(/ *\([^)]*\) */g, "");
+            var eventDescription = e.title.match(/\(([^)]+)\)/)[1];
+
             var str =
               '<h3 class="eventTitle" data-eventId="' +
               e.ID +
               '">' +
-              e.title +
+              eventTitle +
               "</h3>";
-            str += '<h5 class="name">' + e.description + "</h5>";
+            str += '<h5 class="name">' + eventDescription + "</h5>";
             str +=
               '<h5 class="oclock">' +
               mDate.toLocaleString("en-US", {
@@ -265,17 +268,17 @@ $(function () {
     var lowerCaseClassName = className.toLowerCase();
     eventID = $(this).find(".eventTitle").attr("data-eventid");
 
-    if (lowerCaseClassName.indexOf("bodypump") >= 0) {
+    if (lowerCaseClassName.indexOf("body pump") >= 0) {
       var i = 1;
-    } else if (lowerCaseClassName.indexOf("bodyflow") >= 0) {
+    } else if (lowerCaseClassName.indexOf("body flow") >= 0) {
       var i = 2;
     } else if (lowerCaseClassName.indexOf("core") >= 0) {
       var i = 3;
     } else if (lowerCaseClassName.indexOf("rpm") >= 0) {
       var i = 4;
-    } else if (lowerCaseClassName.indexOf("bodystep") >= 0) {
+    } else if (lowerCaseClassName.indexOf("body step") >= 0) {
       var i = 5;
-    } else if (lowerCaseClassName.indexOf("bodyattack") >= 0) {
+    } else if (lowerCaseClassName.indexOf("body attack") >= 0) {
       var i = 6;
     } else if (lowerCaseClassName.indexOf("zumba") >= 0) {
       var i = 7;
@@ -360,17 +363,17 @@ $(function () {
 
     var lowerCaseClassName = className.toLowerCase();
     eventID = nextClass.find(".eventTitle").attr("data-eventid");
-    if (lowerCaseClassName.indexOf("bodypump") >= 0) {
+    if (lowerCaseClassName.indexOf("body pump") >= 0) {
       var i = 1;
-    } else if (lowerCaseClassName.indexOf("bodyflow") >= 0) {
+    } else if (lowerCaseClassName.indexOf("body flow") >= 0) {
       var i = 2;
     } else if (lowerCaseClassName.indexOf("core") >= 0) {
       var i = 3;
     } else if (lowerCaseClassName.indexOf("rpm") >= 0) {
       var i = 4;
-    } else if (lowerCaseClassName.indexOf("bodystep") >= 0) {
+    } else if (lowerCaseClassName.indexOf("body step") >= 0) {
       var i = 5;
-    } else if (lowerCaseClassName.indexOf("bodyattack") >= 0) {
+    } else if (lowerCaseClassName.indexOf("body attack") >= 0) {
       var i = 6;
     } else if (lowerCaseClassName.indexOf("zumba") >= 0) {
       var i = 7;
@@ -420,17 +423,17 @@ $(function () {
 
     var lowerCaseClassName = className.toLowerCase();
     eventID = prevClass.find(".eventTitle").attr("data-eventid");
-    if (lowerCaseClassName.indexOf("bodypump") >= 0) {
+    if (lowerCaseClassName.indexOf("body pump") >= 0) {
       var i = 1;
-    } else if (lowerCaseClassName.indexOf("bodyflow") >= 0) {
+    } else if (lowerCaseClassName.indexOf("body flow") >= 0) {
       var i = 2;
     } else if (lowerCaseClassName.indexOf("core") >= 0) {
       var i = 3;
     } else if (lowerCaseClassName.indexOf("rpm") >= 0) {
       var i = 4;
-    } else if (lowerCaseClassName.indexOf("bodystep") >= 0) {
+    } else if (lowerCaseClassName.indexOf("body step") >= 0) {
       var i = 5;
-    } else if (lowerCaseClassName.indexOf("bodyattack") >= 0) {
+    } else if (lowerCaseClassName.indexOf("body attack") >= 0) {
       var i = 6;
     } else if (lowerCaseClassName.indexOf("zumba") >= 0) {
       var i = 7;
