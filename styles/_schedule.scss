@@ -174,8 +174,15 @@
         flex-direction: column;
         justify-content: center;
 
+        @media screen and (max-width: $laptop-breakpoint) {
+          display: none;
+        }
+
         &.has-event {
           cursor: pointer;
+          @media screen and (max-width: $laptop-breakpoint) {
+            display: flex;
+          }
         }
 
         &.note-0,
@@ -193,18 +200,20 @@
           margin: 0 0.5em;
           padding: 0;
           min-height: unset;
-
-          &:not(.has-event) {
-            display: none;
-          }
         }
 
         h3 {
           margin: 0 0 0.2em;
+          @media screen and (max-width: $laptop-breakpoint) {
+            font-size: 20px;
+          }
         }
 
         h5 {
           margin: 0;
+          @media screen and (max-width: $laptop-breakpoint) {
+            font-size: 16px;
+          }
         }
 
         .learn-more {
@@ -216,6 +225,9 @@
           margin-top: 0.5em;
           margin-bottom: 1em;
           transition: all 0.5s;
+          @media screen and (max-width: $tablet-breakpoint) {
+            display: none;
+          }
           &:after {
             content: url("assets/icon-arrow-red.svg");
             margin-left: 10px;
