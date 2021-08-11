@@ -17,7 +17,7 @@
 
                         <td style="padding: 20px; text-align: center; background: #000" colspan="2">
 
-                            <img src="https://staging.thefitnessclub.net/assets/FitnessClub_Horizontal_Red_White.png" alt="logo" width="138" height="auto" />
+                            <img src="https://thefitnessclub.net/assets/FitnessClub_Horizontal_Red_White.png" alt="logo" width="138" height="auto" />
 
                         </td>
 
