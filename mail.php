@@ -1,13 +1,6 @@
 <?php
 
-    $to = "dat@duo-studio.co";
-
-    $to = "jaime@thefitnessclub.net";
-
-    $to = "rachel@thefitnessclub.net";
-
-    $to = "contact@thefitnessclub.net";
-
+    $to = "dat@duo-studio.co, admin@duo-studio.co, jaime@thefitnessclub.net, sandra@thefitnessclub.net";
 
     $message = '<table style="background: #ffffff; margin: 0 auto;" width="100%" cellspacing="0" cellpadding="0">
 
@@ -59,7 +52,9 @@
         
                                 <td style="width: 90%; padding: 10px 20px; text-align: left;">'.$_POST['message'].'</td>
         
-                            </tr>';
+                            </tr>
+                            
+                            ';
 
     $message .= '</tbody>
 
@@ -83,7 +78,7 @@
 
             </table>';
 
-    $header = "From:form@thefitnessclub.net \r\n";
+    $header = "From: The Fitness Club <form@thefitnessclub.net> \r\n";
 
     $header .= "MIME-Version: 1.0\r\n";
 
