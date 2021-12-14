@@ -1,6 +1,6 @@
 <?php
 
-    $to = "dat@duo-studio.co, admin@duo-studio.co, jaime@thefitnessclub.net, sandra@thefitnessclub.net";
+    $to = "jaime@thefitnessclub.net, sandra@thefitnessclub.net";
 
     $message = '<table style="background: #ffffff; margin: 0 auto;" width="100%" cellspacing="0" cellpadding="0">
 
