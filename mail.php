@@ -66,7 +66,7 @@
 
                             <p style="text-align: center; color: #fff; font-size: 14px; margin: 10px 0;">
 
-                            Copyright 2021 The Fitness Club. All Rights Reserved
+                            Copyright 2022 The Fitness Club. All Rights Reserved
 
                             </p>
 
