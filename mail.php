@@ -1,23 +1,11 @@
 <?php
 
-    $to = "jaime@thefitnessclub.net, sandra@thefitnessclub.net, dat@duo-studio.co";
+    $to = "sandra@thefitnessclub.net, dat@duo-studio.co";
+    // $to = "dat@duo-studio.co, dattnguyen1001@gmail.com, dat_t_nguyen@live.com";
 
-    $message = '<table style="background: #ffffff; margin: 0 auto;" width="100%" cellspacing="0" cellpadding="0">
-
-                <thead>
-
-                    <tr>
-
-                        <td style="padding: 20px; text-align: center; background: #000" colspan="2">
-
-                            <img src="https://thefitnessclub.net/assets/FitnessClub_Horizontal_Red_White.png" alt="logo" width="138" height="auto" />
-
-                        </td>
-
-                    </tr>
-
-                </thead>
-
+    $message = '<html>
+                <body>
+                <table style="background: #ffffff; margin: 0 auto;" width="100%" cellspacing="0" cellpadding="0">
                 <tbody>';
 
                 $subject = "The Fitness Club inquiry for " . $_POST['subject'];
@@ -58,33 +46,18 @@
 
     $message .= '</tbody>
 
-                <tfoot>
+            </table>
+            </body>
+            </html>';
 
-                    <tr>
+    $header = [
+        'From: The Fitness Club <form@thefitnessclub.net>',
+        'List-Unsubscribe: <mailto:form@thefitnessclub?subject=unsubscribe>',
+        'MIME-Version: 1.0',
+        'Content-Type: text/html; charset=UTF-8'
+    ];
 
-                        <td style="padding: 5px; background: #000000;" colspan="2">
-
-                            <p style="text-align: center; color: #fff; font-size: 14px; margin: 10px 0;">
-
-                            Copyright 2022 The Fitness Club. All Rights Reserved
-
-                            </p>
-
-                        </td>
-
-                    </tr>
-
-                </tfoot>
-
-            </table>';
-
-    $header = "From: The Fitness Club <form@thefitnessclub.net> \r\n";
-
-    $header .= "MIME-Version: 1.0\r\n";
-
-    $header .= "Content-type: text/html\r\n";
-
-    $retval = mail ($to,$subject,$message,$header);
+    $retval = mail($to,$subject,$message,implode("\r\n", $header));
 
     if( $retval == true ) {
 
