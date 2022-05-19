@@ -115,7 +115,7 @@ $(function () {
 
 const classes = {
   1: {
-    title: "Les Mills BODYPUMP",
+    title: "BODYPUMP",
     blurb:
       "The original barbell class, the ideal workout for anyone looking to get lean, toned and fit – fast.",
     description:
@@ -123,7 +123,7 @@ const classes = {
     img: "assets/bodypump.jpg",
   },
   2: {
-    title: "Les Mills BODYFLOW",
+    title: "BODYFLOW",
     blurb:
       "(Ideal for anyone and everyone) is a new generation yoga class that will improve your mind, your body and your life.",
     description:
@@ -132,15 +132,15 @@ const classes = {
   },
 
   3: {
-    title: "Les Mills CORE",
+    title: "CORE",
     blurb:
       "Inspired by elite athletic training principles) is a scientific core workout for incredible core tone and sports performance.",
     description:
-      "Inspired by elite athletic training principles) is a scientific core workout for incredible core tone and sports performance. You build strength, stability and endurance in the muscles that support your core, improve balance, assist injury prevention, and become better at everything you do. All the moves in LES MILLS CORE have options, so it’s challenging but achievable whatever your level of fitness. During the workout, trained Instructors guide you through correct technique as you work with resistance tubes and weight plates, as well as bodyweight exercises like crunches, and hovers. Plus there are some hip, butt and lower back exercises too.",
+      "Inspired by elite athletic training principles) is a scientific core workout for incredible core tone and sports performance. You build strength, stability and endurance in the muscles that support your core, improve balance, assist injury prevention, and become better at everything you do. All the moves in CORE have options, so it’s challenging but achievable whatever your level of fitness. During the workout, trained Instructors guide you through correct technique as you work with resistance tubes and weight plates, as well as bodyweight exercises like crunches, and hovers. Plus there are some hip, butt and lower back exercises too.",
     img: "assets/core.jpg",
   },
   4: {
-    title: "Les Mills RPM",
+    title: "RPM",
     blurb:
       "A group indoor cycling workout where you control the intensity. It’s fun, low impact and you can burn up to 500 calories a session.",
     description:
@@ -148,7 +148,7 @@ const classes = {
     img: "assets/rpm.jpg",
   },
   5: {
-    title: "Les Mills BODYSTEP",
+    title: "BODYSTEP",
     blurb:
       "A workout you can expect a mixture of upbeat, rhythmic stepping, with squat and lunge patterns to work the legs.",
     description:
@@ -156,11 +156,11 @@ const classes = {
     img: "assets/bodystep.jpg",
   },
   6: {
-    title: "Les Mills BODYATTACK",
+    title: "BODYATTACK",
     blurb:
       "A high-energy fitness class with moves that cater for total beginners to total addicts.",
     description:
-      "A high-energy fitness class with moves that cater for total beginners to total addicts. We combine athletic movements like running, lunging and jumping with strength exercises such as push- ups and squats. A LES MILLS instructor will pump out energizing tunes and lead you through the workout – challenging your limits in a good way, burning up to 555 calories and leaving you with a sense of achievement.",
+      "A high-energy fitness class with moves that cater for total beginners to total addicts. We combine athletic movements like running, lunging and jumping with strength exercises such as push- ups and squats. An instructor will pump out energizing tunes and lead you through the workout – challenging your limits in a good way, burning up to 555 calories and leaving you with a sense of achievement.",
     img: "assets/bodyattack.jpg",
   },
   7: {

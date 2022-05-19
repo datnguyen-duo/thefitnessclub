@@ -1,6 +1,6 @@
 <?php
 
-    $to = "sandra@thefitnessclub.net, dat@duo-studio.co";
+    $to = "sandra@thefitnessclub.net, son@thefitnessclub.net, dat@duo-studio.co";
     // $to = "dat@duo-studio.co, dattnguyen1001@gmail.com, dat_t_nguyen@live.com";
 
     $message = '<html>
